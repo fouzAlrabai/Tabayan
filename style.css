@@ -13,7 +13,7 @@ body {
 
 .btn-purple {
   border-color: #8366B0;
-  background-color: #8366B0;
+  background-color: #1e4072;
   color: white;
   margin: 1rem;
 }
@@ -53,8 +53,13 @@ div.ex1 {
  
 }
 div.ex2 {
-  width: 50%;
-  height: 50%;}
+  width: 20px;
+  height: 20px;
+    background-color:#8366B0; /*whichever you want*/
+    opacity: 0.5; 
+    filter:(opacity=50); 
+    direction: rtl; 
+}
 
   div.row {
     display: flex;
@@ -72,9 +77,16 @@ div.ex2 {
 }
 #nav1
 {  
-    background-color:#424242; /*whichever you want*/
-    opacity: 0.9; 
-    filter:(opacity=50);       
+  width: 0px;
+  height: 20px;
+  background-color:red; /*whichever you want*/
+  opacity: 0.5; 
+  filter:(opacity=50);     
+} 
+div.myDiv {
+  border: 5px outset red;
+  background-color: lightblue;
+  text-align: center;
 }
   
 /*-- Extra Bootstrap Column Padding --*/

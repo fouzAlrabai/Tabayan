@@ -15,6 +15,14 @@
 			<div class="carousel-item"><img src="img/bridge.png"></div> -->
 		</div>
 	</div>
+	<!-- <div class="ex2"><br>تهدف مبادرة تبيّن لتكوين مجموعة بيانات عربية مفتوحة المصدر لمساعدة الباحثين في مجال التعرف على الشائعات
+				<br>في وسائل التواصل الاجتماعي وتصويب المحتوى غير الصحيح.
+ وتقوم هذه المبادرة على مساهمة العديد من المتطوعين برصد بعض ما يتم تداوله من أخبار ومعلومات في وسائل التواصل الاجتماعي <br>وتصنيفه بعد اتباع الإرشادات والقواعد الضابطة ورفع ما تم رصده لمنصة تبيّن.</div> -->
+
+ <!-- <div class="myDiv" >
+  <h2>This is a heading in a div element</h2>
+  <p>This is some text in a div element.</p>
+</div> -->
 	<!--- End Image Slider -->
 
 	<!--- Complete Bootstrap Course -->
