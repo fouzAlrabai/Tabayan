@@ -4,30 +4,37 @@
 		<?php include 'includes/head.php';?>
 </head>
 <body>
-<!--- Image Slider -->
-<div class="carousel slide" data-ride="carousel">
-		<div class="carousel-inner">
-			<div class="carousel-item active"><img src="img/data-image3.png"></div>
-			<!-- <div class="carousel-item"><img src="img/sky.png"></div>
-			<div class="carousel-item"><img src="img/bridge.png"></div> -->
-		</div>
-	</div>
-	<!--- End Image Slider -->
-	
-<div class="row mt-5">
-    <div class="col-12 text-center mt-5">
-        <h3>contact us</h3>
-    </div>
-</div>
+
 <?php $page ='contact-us';include 'includes/navbar.php';?>
+ 
+<div id="bgimage">
+    </div>
+		<div class="container" style="padding:30px">
+			<div class="row flex-row-reverse text-right">				
+				<div class="col-lg-5 col-md-6 col-sm-12 col-xs-6 first" id="top3" >					
+						<h1 style="padding: 30px 30px 30px 15px ;color:white"> نسعد بتواصلكم معنا</h1><br><br>						
+						<h2> :ايميل</h2>					
+						<a href="mailto:saudidata2030@gmail.com" style="font-size: 23px; "><p>saudidata2030@gmail.com<p></a>
+						<h3> :الهاتف</h3>
+						<p style="color:#1e4072; font-size: 23px; ">05000000000000</p>
+						<h3> :العنوان</h3>
+						<p style="color:#1e4072;font-size: 23px;">حي الصحافة<br>
+							الرياض-٠٠٠٠٠<br>
+							المملكة العربية السعودية </p><br><br><br><br>					
+				</div>
+
+				<div class="col-lg-6 col-md-6  col-sm-12 col-xs-6 text-left">
+					<img src="img/cropped-dsSIGlogoL-1.png" width=80% height=80% >				
+				</div>
+			</div>	
+		</div>						
+	</div><!--- End Row -->
+ </div><!--- End Container -->
 
 
-    
-
-
-	<!--- Start Footer -->
-	<?php include 'includes/footer.php';?>
-	<!--- End of Footer -->
+<!--- Start Footer -->
+<?php include 'includes/footer.php';?>
+<!--- End of Footer -->
 
 <!--- Script Source Files -->
 <?php include 'includes/scripts.php';?>

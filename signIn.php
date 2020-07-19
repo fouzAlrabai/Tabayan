@@ -5,35 +5,51 @@
 </head>
 <body>
 <!--- Image Slider -->
-<div class="carousel slide" data-ride="carousel">
-		<div class="carousel-inner">
-			<div class="carousel-item active"><img src="img/data-image3.png"></div>
-			<!-- <div class="carousel-item"><img src="img/sky.png"></div>
-			<div class="carousel-item"><img src="img/bridge.png"></div> -->
-		</div>
-	</div>
-	<!--- End Image Slider -->
-<div class="myDiv">
-    <div class="col-12 text-right ">
-        <h3><br>تهدف مبادرة تبيّن لتكوين مجموعة بيانات عربية مفتوحة المصدر لمساعدة الباحثين في مجال التعرف على الشائعات
-				<br>في وسائل التواصل الاجتماعي وتصويب المحتوى غير الصحيح.
- وتقوم هذه المبادرة على مساهمة العديد من المتطوعين برصد بعض ما يتم تداوله من أخبار ومعلومات في وسائل التواصل الاجتماعي <br>وتصنيفه بعد اتباع الإرشادات والقواعد الضابطة ورفع ما تم رصده لمنصة تبيّن.</h3>
-    </div>
+<div id="bgimage">
+<h1 class="text-center" style="padding:150px 0px 0px; color:white; font-weight: bold" id="TabayanSmall">مبادرة تبيّن</h1>
 </div>
+	<!--- End Image Slider -->
 
 
                     
 <?php $page ='login';include 'includes/navbar.php';?>
 
-<div class="ex2"></div>
+
+<div class="container">
+		<div class="row justify-content-center text-center">
+		
+		<div class="col-lg-5 col-md-8 col-sm-12 col-xs-12  py-5 first" id="top2">
+
+				
+					<form action="check_logIn.php" method="POST">
+						<div class="form-group ">
+							<h3 class="text-center" style=" padding:0px 0px 15px; color:white">تسجيل الدخول</h3>
+							<img src="img/Tabayan logo without bg copy.png"  width=180 height=140 class="rounded mx-auto d-block" style=" padding:0px 0px 15px;"/>
+						</div>
+						
+						<div class="form-group ">
+							<input type="email" class="form-control text-right" id="Email" name="Email" placeholder="البريد الإلكتروني" required >
+						</div>
+						
+						<div class="form-group">
+							<input type="password" class="form-control text-right" id="Password" name="Password" placeholder="كلمة المرور" required>
+						</div>
+
+						<a href="index.php"><button type="submit" class="btn btn-purple btn-block text-center btn btn-primary" id="buttonStyle" value="Login" >تسحيل الدخول</button></a>
+						<a href="resetPassword.php"><p class="text-right" style="color:#687089; padding:15px"> هل نسيت كلمة المرور؟</p></a>
+						
+			
+					</form>
+					
+			</div>
+		</div>
+</div>
 
 
-    
 
-
-	<!--- Start Footer -->
-	<?php include 'includes/footer.php';?>
-	<!--- End of Footer -->
+<!--- Start Footer -->
+<?php include 'includes/footer.php';?>
+<!--- End of Footer -->
 
 <!--- Script Source Files -->
 <?php include 'includes/scripts.php';?>

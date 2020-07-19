@@ -12,20 +12,21 @@ body {
 }
 
 .btn-purple {
-  border-color: #8366B0;
+  border-color: #1e4072;
   background-color: #1e4072;
   color: white;
-  margin: 1rem;
+  /* margin: 1rem; */
 }
 .btn-purple:hover,
 .btn-purple:focus {
-  border-color: #594781;
-  background-color: #594781;
+  border-color: #1e4072;
+  background-color: #1e4072;
   color: white;
 }
 
 .feature img {
   padding: 1.5rem;
+ 
 }
 
 footer {
@@ -46,51 +47,183 @@ footer img {
 footer h3 {
   margin: 1.5rem 0;
 }
-div.ex1 {
-  
-    display: flex;
-    padding:5px
- 
-}
-div.ex2 {
-  width: 20px;
-  height: 20px;
-    background-color:#8366B0; /*whichever you want*/
-    opacity: 0.5; 
-    filter:(opacity=50); 
-    direction: rtl; 
-}
 
-  div.row {
+div.row {
     display: flex;
     margin: 0;
     box-align: center;
     
-  }
-  div.img2 {
-    
-    margin: 0;
-    
-  }
-  #images {
-    white-space: nowrap;
 }
-#nav1
-{  
-  width: 0px;
-  height: 20px;
-  background-color:red; /*whichever you want*/
-  opacity: 0.5; 
-  filter:(opacity=50);     
-} 
-div.myDiv {
-  border: 5px outset red;
-  background-color: lightblue;
-  text-align: center;
+#buttonStyle{
+  border-radius: 50px 50px 50px 50px;
 }
-  
-/*-- Extra Bootstrap Column Padding --*/
 
-/* [class*="col-"] {
-  padding: 1rem;
-} */
+
+#top{
+  color: white; 
+  /* position: absolute; */
+  top: 110px; 
+  
+}
+
+
+#bgimage{
+background-image: url('img/data-image3.png');
+background-position: center center;
+background-size: cover;
+height: 350px;
+}
+
+#top2{
+  top: -120px;  
+}
+#top3{
+  top: -150px;  
+}
+
+
+div.first { 
+  /*setting alpha = 0.1*/ 
+  background: rgba(192,192,192,0.3);
+  border-radius: 10px 10px 10px 10px;  
+}
+
+
+@media (max-width: 375px){
+  #bgimage{
+    background-image: url('img/data-image3.png');
+    background-position: center center;
+    background-size: cover;
+    height: 500px;
+    }
+}
+
+@media (max-width: 575.98px){
+  #bgimage{
+    background-image: url('img/data-image3.png');
+    background-position: center center;
+    background-size: cover;
+    height: 500px;
+    }
+}
+
+@media (max-width: 375px){
+  #TabayanSmall{
+position: relative;
+top:100px
+    }
+}
+@media (max-width: 575.98px){
+  #TabayanSmall{
+position: relative;
+top:100px
+    }
+}
+@media (max-width: 767.98px){
+  #TabayanSmall{
+position: relative;
+top:100px
+    }
+}
+
+@media (max-width: 767.98px){
+#bgimage{
+  background-image: url('img/data-image3.png');
+  background-position: center center;
+  background-size: cover;
+  height: 520px;
+  }
+}
+.myimg{
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  /* padding-bottom: 10px;
+  padding-right: 30px; */
+}
+.name{
+  
+  padding-bottom: 20px;
+}
+.box {
+  /* position: absolute;
+  top: 50%;
+  left: 50%; */
+  /* transform: translate(-20%, -45%); */
+  margin-right: 40px;
+  border-radius: 10px 10px 10px 10px; 
+  
+}
+
+.box select {
+  border-radius: 5px 5px 5px 5px; 
+  background-color: #1e4072 ;
+  color: white;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  text-align: right;
+}
+
+.box::before {
+  content: "\f13a";
+  font-family: FontAwesome;
+  /* position: absolute; */
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
+#radioBtn{
+  margin-right: 40px; 
+}
+#radioBtn .notActive{
+  color: #687089;
+  background-color: #fff;
+  
+}
+#radioBtn .active{
+  color: #fff;
+  background-color: #1e4072;
+  
+}
+.picker{
+  margin-right: 40px; 
+  border-radius: 10px 10px 10px 10px; 
+}
+.div1{
+  margin-top: -50px;
+}
+div.style{
+border-color: #505962;
+border-width: 20px;
+background-color: #fff;
+
+}
+
+
+
+
+
+
+
