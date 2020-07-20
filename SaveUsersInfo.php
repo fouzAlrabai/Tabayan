@@ -1,3 +1,7 @@
+
+<head>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.2/sweetalert2.all.min.js"></script>
+</head>
 <?php
     $con=mysqli_connect("localhost","root","","Tabayan");
     $username=$_POST['Email'];
@@ -18,9 +22,19 @@
             VALUES ('$username', '$password','$userType')";
 
             if ($con->query($sql) === TRUE) {
-             echo "New record created successfully";
+                
+            echo '<script type="text/javascript">';
+            echo 'setTimeout(function () {swal("شكراً لك", " تم حفظ البيانات بنجاح  ", "success", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
+            echo '}, 1000);</script>';
+
+           
+            
+             
             } else {
-            echo "Error: " . $sql . "<br>" . $con->error;
+            // echo "Error: " . $sql . "<br>" . $con->error;
+            echo '<script type="text/javascript">';
+            echo 'setTimeout(function () {swal("!عذراً، حدث خطأ ما", " لم يتم حفظ البيانات   ", "error", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
+            echo '}, 1000);</script>';
             }
 
     // $row=mysqli_fetch_array($result);
@@ -54,3 +68,4 @@
     // }
 
 ?>
+<?php include 'includes/scripts.php';?>

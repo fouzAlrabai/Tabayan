@@ -12,7 +12,7 @@
 
 
                     
-<?php $page ='login';include 'includes/navbar.php';?>
+
 
 
 <div class="container">
@@ -57,7 +57,7 @@
 		
 						<div class="row justify-content-center text-center py-3">
 							<div class=" col-lg-5 col-md-5 col-sm-5 col-xs-5 " >
-								<button type="submit" class="btn btn-purple btn-block text-center btn btn-primary" id="buttonStyle" value="Login">حفظ</button>
+								<button type="submit" class="btn btn-purple btn-block text-center btn btn-primary" id="buttonStyle" value="Login" onclick="validation2();">حفظ</button>
 							</div>
 						</div>
 			

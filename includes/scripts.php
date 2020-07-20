@@ -97,7 +97,7 @@ var ID2=getID();
 </script>
 
 <script type="text/javascript">
-			function validation2(){
+			public function validation2(){
                 swal("عمل جميل", "تم حفظ البيانات بنجاح ", "success",{
                     buttons: {
                         catch: {
@@ -108,8 +108,13 @@ var ID2=getID();
                 })
                 .then((value) => {
                     window.location.href="DataEntry.php"; 
-                });
-                
+                });     
                 
 			}
 </script>
+
+<script type="text/javascript">
+        function run(){
+            alert("hello world");
+        }
+    </script>
