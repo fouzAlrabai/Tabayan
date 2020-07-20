@@ -89,7 +89,7 @@
 					$total_record=mysqli_num_rows($pr_result);
 					$total_page=ceil($total_record/$num_per_page);
 				if($pages>1){
-				echo "<a href='index_check.php?page=".($pages-1)."' class='previous btn btn-purple btn-block text-center btn btn-primary' style='background-color:#9c2025; border-color:#9c2025' >&laquo;  السابق</a>";
+				echo "<a href='DataChecker.php?page=".($pages-1)."' class='previous btn btn-purple btn-block text-center btn btn-primary' style='background-color:#9c2025; border-color:#9c2025' >&laquo;  السابق</a>";
 				}
 
 				for($i=1;$i<$total_page;$i++){
@@ -101,7 +101,7 @@
 		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" >
 		<?php
 		if($i>$pages){
-			echo "<a id='next' href='index_check.php?page=".($pages+1)."&ID=".$ID."' class= 'next btn btn-purple btn-block text-center btn btn-primary' style='background-color:#60bad0; border-color:#60bad0' method='get'>التالي  &raquo;</a>";	  
+			echo "<a id='next' href='DataChecker.php?page=".($pages+1)."&ID=".$ID."' class= 'next btn btn-purple btn-block text-center btn btn-primary' style='background-color:#60bad0; border-color:#60bad0' method='get'>التالي  &raquo;</a>";	  
 				
 			}	
 		?>

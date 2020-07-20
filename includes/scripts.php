@@ -91,7 +91,7 @@ var ID2=getID();
                     },
                 })
                 .then((value) => {
-                    window.location.href="signIn.php"; 
+                    window.location.href="index.php"; 
                 });
             }
 </script>
@@ -107,7 +107,7 @@ var ID2=getID();
                     },
                 })
                 .then((value) => {
-                    window.location.href="index.php"; 
+                    window.location.href="DataEntry.php"; 
                 });
                 
                 

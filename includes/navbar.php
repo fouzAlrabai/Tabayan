@@ -14,7 +14,7 @@
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link <?php if ($page=='login'){echo 'active';}?>" href="signIn.php">تسجيل الدخول </a>
+						<a class="nav-link <?php if ($page=='login'){echo 'active';}?>" href="index.php">تسجيل الدخول </a>
 					</li>
 
 					<li class="nav-item">

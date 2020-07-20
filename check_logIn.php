@@ -15,25 +15,25 @@
     $row=mysqli_fetch_array($result);
     if($row>0){
             if($row['UserName'] == $username && $row['UserPass'] == $password){
-                if($row['UserType']=="auditor"){
+                if($row['UserType']=="DataChecker"){
                     // echo "Login succ ".$row['UserName']."Type is ".$row['UserType'];
                     $_SESSION["UserName"] = $row['UserName'];
                     $_SESSION["UserPass"] = $row['UserPass'];
-                header("location: index_check.php");
-                }if($row['UserType']=="normal"){
+                header("location: DataChecker.php");
+                }if($row['UserType']=="DataEntry"){
                     // echo "Login succ ".$row['UserName']."Type is ".$row['UserType'];
                     $_SESSION["UserName"] = $row['UserName'];
                     $_SESSION["UserPass"] = $row['UserPass'];
-                header("location: index.php");  
+                header("location: DataEntry.php");  
                 }
                
             }else{
-                header("location: signIn.php");
+                header("location: index.php");
                  $error = "Your Login Name or Password is invalid";
             }
     }
     else{
-        header("location: signIn.php");
+        header("location: index.php");
          $error = "Your Login Name or Password is invalid";
     }
 
