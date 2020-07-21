@@ -26,6 +26,21 @@
 							<h3 class="text-center" style=" padding:0px 0px 15px; color:white">ادخل معلومات المشارك</h3>
 							<img src="img/Tabayan logo without bg copy.png"  width=180 height=140 class="rounded mx-auto d-block" style=" padding:0px 0px 15px;"/>
 						</div>
+
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.2/sweetalert2.all.min.js"></script>
+						<?php 
+							if(@$_GET['Save']==true){
+								if(@$_GET['Save']=='Yes'){
+									echo '<script type="text/javascript">';
+									echo 'setTimeout(function () {swal("شكراً لك", " تم حفظ البيانات بنجاح  ", "success", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
+									echo '}, 500);</script>';
+								}elseif (@$_GET['Save']=='No') {
+									echo '<script type="text/javascript">';
+            						echo 'setTimeout(function () {swal("!عذراً، حدث خطأ ما", " لم يتم حفظ البيانات   ", "error", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
+            						echo '}, 500);</script>';
+								}
+							}
+						?>
 						
 						<div class="form-group ">
 							<input type="email" class="form-control text-right" id="Email" name="Email" placeholder="البريد الإلكتروني" required >

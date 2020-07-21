@@ -21,19 +21,22 @@
 
             if ($con->query($sql) === TRUE) {
                 
-            echo '<script type="text/javascript">';
-            echo 'setTimeout(function () {swal("شكراً لك", " تم حفظ البيانات بنجاح  ", "success", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
-            echo '}, 1000);</script>';
-
+            // echo '<script type="text/javascript">';
+            // echo 'setTimeout(function () {swal("شكراً لك", " تم حفظ البيانات بنجاح  ", "success", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
+            // echo '}, 1000);</script>';
+            
+            header("location: EnterUsersInfo.php?Save=Yes");
            
             
              
             } else {
                  
             // echo "Error: " . $sql . "<br>" . $con->error;
-            echo '<script type="text/javascript">';
-            echo 'setTimeout(function () {swal("!عذراً، حدث خطأ ما", " لم يتم حفظ البيانات   ", "error", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
-            echo '}, 1000);</script>';
+            // echo '<script type="text/javascript">';
+            // echo 'setTimeout(function () {swal("!عذراً، حدث خطأ ما", " لم يتم حفظ البيانات   ", "error", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
+            // echo '}, 1000);</script>';
+
+            header("location: EnterUsersInfo.php?Save=No");
             }
 
 

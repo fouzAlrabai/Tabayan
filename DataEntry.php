@@ -10,7 +10,7 @@
 </head>
 <body>
 	
-<?php $page ='home'; include 'includes/navbar2.php';?>
+<?php $page ='home'; include 'includes/navbar3.php';?>
 
 
 <!-- Tabayan description -->

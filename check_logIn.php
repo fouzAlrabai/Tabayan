@@ -1,16 +1,12 @@
-
-<head>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.2/sweetalert2.all.min.js"></script>
-</head>
 <?php
     $mysqli = new mysqli("localhost","root","Reema1420","mydb");
-    //Verbindung überprüfen
     if ($mysqli -> connect_errno)
     {
       printf("Verbindung fehlgeschlagen: %s\n", $mysqli->connect_error);
       exit();
     }
- session_start();
+    session_start();
+    if($_SERVER['REQUEST_METHOD']=='POST'){
     $username=$_POST['Email'];
     $password=$_POST['Password'];
 
@@ -28,31 +24,32 @@
     if($row>0){
             if($row['user_name'] == $username && $row['user_password'] == $password){
                 if($row['user_type']=="DataChecker"){
-                    // echo "Login succ ".$row['UserName']."Type is ".$row['UserType'];
+
                     $_SESSION["UserName"] = $row['user_name'];
                     $_SESSION["UserPass"] = $row['user_password'];
-                header("location: DataChecker.php");
+                    header("location: DataChecker.php");
+
                 }if($row['user_type']=="DataEntry"){
-                    // echo "Login succ ".$row['UserName']."Type is ".$row['UserType'];
+
                     $_SESSION["UserName"] = $row['user_name'];
                     $_SESSION["UserPass"] = $row['user_password'];
-                header("location: DataEntry.php");  
+                    header("location: DataEntry.php");  
+
                 }
                
             }else{
 
-                echo '<script type="text/javascript">';
-                echo 'setTimeout(function () {swal("!عذراً،   ", "البريد الاكتروني او كلمة المرور غير صحيحة    ", "error", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="index.php"; });';
-                echo '}, 1000);</script>';
-                // header("location: index.php");
-                //  $error = "Your Login Name or Password is invalid";
-                 
+                // echo '<script type="text/javascript">';
+                // echo 'setTimeout(function () {swal("!عذراً،   ", "البريد الاكتروني او كلمة المرور غير صحيحة    ", "error", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="index.php"; });';
+                // echo '}, 1000);</script>';
+                header("location: index.php?Error= اسم المستخدم او كلمة المرور غير صحيحة");         
             }
     }
     else{
-        echo '<script type="text/javascript">';
-                echo 'setTimeout(function () {swal("!عذراً،   ", " لم يتم حفظ البيانات   ", "error", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="index.php"; });';
-                echo '}, 1000);</script>';
+        header("location: index.php?Error= اسم المستخدم او كلمة المرور غير صحيحة");
     }
+}else {
+    echo "Error: You Cant\'t Brwose This Page Directory";
+}
 
 ?>

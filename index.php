@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 		<?php include 'includes/head.php';?>
+		
 </head>
 <body>
 <!--- Image Slider -->
@@ -26,7 +27,20 @@
 							<h3 class="text-center" style=" padding:0px 0px 15px; color:white">تسجيل الدخول</h3>
 							<img src="img/Tabayan logo without bg copy.png"  width=180 height=140 class="rounded mx-auto d-block" style=" padding:0px 0px 15px;"/>
 						</div>
-						
+						<?php 
+						if(@$_GET['Error']==true)
+							{
+						?>
+						<div class=" text-danger py-3 "><?php echo $_GET['Error']?></div>
+
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.2/sweetalert2.all.min.js"></script>
+						<?php 
+							}if(@$_GET['Logout']==true){
+								echo '<script type="text/javascript">';
+								echo 'setTimeout(function () {swal(" ", " تم تسحيل الخروج بنجاح    ", "success", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="index.php"; });';
+								echo '}, 300);</script>';
+								}
+						?>
 						<div class="form-group ">
 							<input type="email" class="form-control text-right" id="Email" name="Email" placeholder="البريد الإلكتروني" required >
 						</div>

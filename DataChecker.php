@@ -13,6 +13,7 @@
 		$start_from= ($pages-1)*01;
 
 		$query="select * from data limit $start_from,$num_per_page";
+		// $query="select data_ID from data minus data_ID from check";
 		$result=mysqli_query($con,$query);
 	session_start();
 	$_SESSION["DataID"]=1;
@@ -68,7 +69,8 @@
 				?>
 
 				  <?php echo "<font color='#1e4072'; font size=4px >الخبر : "."<font color='black' ; font size=4px >". $row['Data']."<br/>"."<br/>"." <font color='#1e4072'; font size=4px >نوع الخبر : "."<font color='black' ; font size=4px >".$row['data_kind'];
-				  $ID=$row['data_ID']
+				  $ID=$row['data_ID'];
+				  $_SESSION["DataID"]=$row['data_ID'];
 				  ?>
 
 				
