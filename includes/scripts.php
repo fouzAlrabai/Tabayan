@@ -51,6 +51,27 @@ $(document).ready(function(){
                 console.log(response);
             }
         });
+        
+  });
+
+});
+
+$(document).ready(function(){
+  $("#before").click(function(){
+    var Type=get();
+    var ID=$('#ID').data('title');
+    setID(ID);
+   
+        $.ajax({
+            url: 'connection2.php',
+            method: 'post',
+            data: {Type: Type, ID: ID},
+            success: function (response) {
+                console.log(response);
+            }
+        });
+        
+
   });
 
 });
@@ -91,6 +112,19 @@ var ID2=getID();
                     },
                 })
                 .then((value) => {
+                    var Type=get();
+                    var ID=$('#ID').data('title');
+                    setID(ID);
+   
+                    $.ajax({
+            url: 'connection.php',
+            method: 'post',
+            data: {Type: Type, ID: ID},
+            success: function (response) {
+                console.log(response);
+            }
+        });
+                    
                     window.location.href="index.php"; 
                 });
             }

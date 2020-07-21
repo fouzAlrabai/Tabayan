@@ -6,11 +6,11 @@
 				<ul class="navbar-nav ml-auto " style="margin-right: 100px; font-weight: bold;">
 
 					<li class="nav-item">
-						<a class="nav-link <?php if ($page=='login'){echo 'active';}?>" href="index.php">تسجيل خروج </a>
+						<a class="nav-link <?php if ($page=='login'){echo 'active';}?>" href="logout.php">تسجيل خروج </a>
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link <?php if ($page=='home'){echo 'active';}?>" href="DataEntry.php">مبادرة تبيّن</a>
+						<a class="nav-link <?php if ($page=='home'){echo 'active';}?>" href="DataChecker.php">مبادرة تبيّن</a>
 					</li>
 
 					<li class="nav-item">

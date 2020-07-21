@@ -12,9 +12,11 @@
 		$num_per_page =01;
 		$start_from= ($pages-1)*01;
 
-		$query="select * from Data limit $start_from,$num_per_page";
+		$query="select * from data limit $start_from,$num_per_page";
 		$result=mysqli_query($con,$query);
-?>
+	session_start();
+	$_SESSION["DataID"]=1;
+?>	
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,15 +54,21 @@
 <!-- Save Button-->
 <div class="container ">
 	<div class="row justify-content-center text-center  py-5">
-		<div class="col-lg-5 col-md-5 col-sm-4 col-xs-4 first ">
+		<div class="col-lg-5 col-md-5 col-sm-4 col-xs-4 first py-5 ">
 		<h3	 class="text-center py-3" style="font-weight: bold">: تحقق من البيانات المدخلة</h3>	
 			<div class="style py-2">
+			
 				<?php
+
+				if (!$result) {
+					printf("لا يوجد بيانات مدخلة ");
+					exit();
+						}
 					while($row=mysqli_fetch_array($result)){	
 				?>
 
-				  <?php echo "<font color='#1e4072'; font size=4px >الخبر : "."<font color='black' ; font size=4px >". $row['Data']."<br/>"."<br/>"." <font color='#1e4072'; font size=4px >نوع الخبر : "."<font color='black' ; font size=4px >".$row['DataKind']."<br/>";
-				  $ID=$row['DataId']
+				  <?php echo "<font color='#1e4072'; font size=4px >الخبر : "."<font color='black' ; font size=4px >". $row['Data']."<br/>"."<br/>"." <font color='#1e4072'; font size=4px >نوع الخبر : "."<font color='black' ; font size=4px >".$row['data_kind'];
+				  $ID=$row['data_ID']
 				  ?>
 
 				
@@ -84,12 +92,12 @@
 	<div class="row d-flex justify-content-around ">
 		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 			<?php
-					$pr_query = "select * from Data";
+					$pr_query = "select * from data";
 					$pr_result = mysqli_query($con,$pr_query);
 					$total_record=mysqli_num_rows($pr_result);
 					$total_page=ceil($total_record/$num_per_page);
 				if($pages>1){
-				echo "<a href='DataChecker.php?page=".($pages-1)."' class='previous btn btn-purple btn-block text-center btn btn-primary' style='background-color:#9c2025; border-color:#9c2025' >&laquo;  السابق</a>";
+				echo "<a id='before' href='DataChecker.php?page=".($pages-1)."&ID=".($ID-1)."' class='previous btn btn-purple btn-block text-center btn btn-primary' style='background-color:#9c2025; border-color:#9c2025' method='get'>&laquo;  السابق</a>";
 				}
 
 				for($i=1;$i<$total_page;$i++){
@@ -101,7 +109,7 @@
 		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" >
 		<?php
 		if($i>$pages){
-			echo "<a id='next' href='DataChecker.php?page=".($pages+1)."&ID=".$ID."' class= 'next btn btn-purple btn-block text-center btn btn-primary' style='background-color:#60bad0; border-color:#60bad0' method='get'>التالي  &raquo;</a>";	  
+			echo "<a id='next' href='DataChecker.php?page=".($pages+1)."&ID=".($ID+1)."' class= 'next btn btn-purple btn-block text-center btn btn-primary' style='background-color:#60bad0; border-color:#60bad0' method='get'>التالي  &raquo;</a>";	  
 				
 			}	
 		?>
