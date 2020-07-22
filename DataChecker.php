@@ -32,8 +32,13 @@
 <body>
 	
 <?php $page ='home'; include 'includes/navbar2.php';?>
-
-
+<?php if(!isset($_SESSION['UserName']))
+{
+    // not logged in
+    header('Location: index.php');
+	exit();
+}
+?>
 <!-- Tabayan description -->
 <div id="bgimage">
         <div class="container">
@@ -127,14 +132,6 @@
 		</div>
 	</div>	
 </div>
-
-<?php
-if(isset($_POST['#radioBtn a'])){
-	echo '<script type="text/javascript"> alert("data next")</script>';
-// echo $_POST['type'];
-}?>
-
-
 
 
 <!--- Start Footer -->

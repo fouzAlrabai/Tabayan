@@ -12,6 +12,15 @@
 	
 <?php $page ='home'; include 'includes/navbar3.php';?>
 
+<?php session_start();?>
+
+<?php if(!isset($_SESSION['UserName']))
+{
+    // not logged in
+    header('Location: index.php');
+	exit();
+}
+?>
 
 <!-- Tabayan description -->
 <div id="bgimage">

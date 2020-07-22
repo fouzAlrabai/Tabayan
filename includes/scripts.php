@@ -125,7 +125,7 @@ var ID2=getID();
             }
         });
                     
-                    window.location.href="index.php"; 
+                    window.location.href="logout.php"; 
                 });
             }
 </script>

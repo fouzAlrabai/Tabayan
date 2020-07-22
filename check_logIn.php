@@ -9,6 +9,7 @@
     if($_SERVER['REQUEST_METHOD']=='POST'){
     $username=$_POST['Email'];
     $password=$_POST['Password'];
+    $username=strtoupper($username);
 
     $username=stripcslashes($username);
     $password=stripcslashes($password);
@@ -42,14 +43,14 @@
                 // echo '<script type="text/javascript">';
                 // echo 'setTimeout(function () {swal("!عذراً،   ", "البريد الاكتروني او كلمة المرور غير صحيحة    ", "error", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="index.php"; });';
                 // echo '}, 1000);</script>';
-                header("location: index.php?Error= اسم المستخدم او كلمة المرور غير صحيحة");         
+                header("location: index.php?Error= البريد الإلكتروني أو كلمة المرور غير صحيحة");         
             }
     }
     else{
-        header("location: index.php?Error= اسم المستخدم او كلمة المرور غير صحيحة");
+        header("location: index.php?Error= البريد الإلكتروني أو كلمة المرور غير صحيحة");
     }
 }else {
-    echo "Error: You Cant\'t Brwose This Page Directory";
+    echo "Error: You Cant't Brwose This Page Directory";
 }
 
 ?>
