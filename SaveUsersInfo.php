@@ -1,10 +1,6 @@
-
-<head>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.2/sweetalert2.all.min.js"></script>
-</head>
 <?php
-    $con=mysqli_connect("localhost","root","Reema1420","mydb");
-
+    //Coonect With Database
+    require_once('config.php');
     session_start();
     if($_SERVER['REQUEST_METHOD']=='POST'){
 
@@ -26,22 +22,14 @@
                     if ($con->query($sql) === TRUE) {
                         $sql2="update user set user_name = UPPER(user_name)";
                         $result2=mysqli_query($con,$sql2);
-                    // echo '<script type="text/javascript">';
-                    // echo 'setTimeout(function () {swal("شكراً لك", " تم حفظ البيانات بنجاح  ", "success", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
-                    // echo '}, 1000);</script>';
                     
-                    header("location: EnterUsersInfo.php?Save=Yes");
-                
-                    
-                    
-                    } else {
-                        
+                        header("location: EnterUsersInfo.php?Save=Yes"); 
+                    } else {    
                     // echo "Error: " . $sql . "<br>" . $con->error;
                     // echo '<script type="text/javascript">';
                     // echo 'setTimeout(function () {swal("!عذراً، حدث خطأ ما", " لم يتم حفظ البيانات   ", "error", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
                     // echo '}, 1000);</script>';
-
-                    header("location: EnterUsersInfo.php?Save=No");
+                        header("location: EnterUsersInfo.php?Save=No");
                     }
         }else{
             echo "Error: You Cant't Browse This Page Directory";
@@ -49,4 +37,3 @@
 
 
 ?>
-<?php include 'includes/scripts.php';?>
