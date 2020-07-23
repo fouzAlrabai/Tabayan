@@ -45,6 +45,8 @@
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
 				        <h4 class="text-right pt-5 pb-3" style="color:#1e4072;">: ادخال البيانات</h3>
 						<textarea class="form-control" aria-label="With textarea" style="padding:0px 30px 15px; "dir="rtl"></textarea>
+
+					<?php	$sql = "INSERT INTO data (data) VALUES ('".$_POST["data"]."'"; ?>
 						<h4 class="text-right pt-5 pb-3" style="color:#1e4072;">: نوع البيانات </h4>
 
 						<div class="form-group">

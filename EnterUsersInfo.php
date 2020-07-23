@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include 'config.php';?>
 <head>
 		<?php include 'includes/head.php';?>
 </head>
@@ -29,6 +30,7 @@
 
 						<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.2/sweetalert2.all.min.js"></script>
 						<?php 
+						include 'config.php';
 							if(@$_GET['Save']==true){
 								if(@$_GET['Save']=='Yes'){
 									echo '<script type="text/javascript">';
