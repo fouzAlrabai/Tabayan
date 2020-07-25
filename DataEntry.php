@@ -40,13 +40,28 @@
 				<!-- End Tabayan description -->
 
 <!-- Enter Data-->
+
 		<div class="container">
+		<form action="DataSaveInfo.php" method="POST">
+		<?php 
+							if(@$_GET['Save']==true){
+								if(@$_GET['Save']=='Yes'){
+									echo '<script type="text/javascript">';
+									echo 'setTimeout(function () {swal("شكراً لك", " تم حفظ البيانات بنجاح  ", "success", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
+									echo '}, 500);</script>';
+								}elseif (@$_GET['Save']=='No') {
+									echo '<script type="text/javascript">';
+            						echo 'setTimeout(function () {swal("!عذراً، حدث خطأ ما", " لم يتم حفظ البيانات   ", "error", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
+            						echo '}, 500);</script>';
+								}
+							}
+						?>
 			<div class="row flex-row-reverse text-right">
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
 				        <h4 class="text-right pt-5 pb-3" style="color:#1e4072;">: ادخال البيانات</h3>
-						<textarea class="form-control" aria-label="With textarea" style="padding:0px 30px 15px; "dir="rtl"></textarea>
+						<textarea class="form-control" name="DataEn" aria-label="With textarea" style="padding:0px 30px 15px; "dir="rtl"></textarea>
 
-					<?php	$sql = "INSERT INTO data (data) VALUES ('".$_POST["data"]."'"; ?>
+					
 						<h4 class="text-right pt-5 pb-3" style="color:#1e4072;">: نوع البيانات </h4>
 
 						<div class="form-group">
@@ -57,7 +72,7 @@
 										<a class="btn btn-primary btn-sm notActive" data-toggle="happy" data-title="N"style="width:130px; height:35px ; font-size:20px; border-color: #1e4072">حقيقة</a>
 										<a class="btn btn-primary btn-sm notActive" data-toggle="happy" data-title="O"style="width:130px; height:35px ; font-size:20px; border-color: #1e4072">إشاعة</a>
     								</div>
-    								<input type="hidden" name="happy" id="happy">
+    								<input type="hidden" name="Dataki" id="happy">
     							<!-- </div>
     						</div> -->
 						</div>
@@ -67,7 +82,7 @@
 										
 						<div class="form-group">
 							<div class="box">
-								<select>
+								<select >
 								<option>اختر مجال معين</option>
 										<option>الصحة</option>
 										<option>الرياضة</option>
@@ -76,6 +91,7 @@
 										<option>الاقتصاد</option>
 										<option>غير ذلك</option>
 								</select>
+								<input type="submit" id="hh" name="DataSel"/>
 						 	</div>
 						</div>
 						<!-- datePicker -->
@@ -84,10 +100,16 @@
 						<div class="form-group float-right ">
 							<div class="row jus " >
 								<div class="col-md-12 " >
-									<input id="datepicker" width="270" style="padding:20px 30px 30px; margin-right: 20px; "/>
+									<input id="datepicker" name="DataDe" width="270" style="padding:20px 30px 30px; margin-right: 20px; "/>
 								</div>
 							</div>
 						</div>
+						<div class="row justify-content-center text-center">
+		<div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
+				<br>
+				<button onclick="validation2();" type="submit" class="btn btn-purple btn-block text-center btn btn-primary"style="font-size:20px;font-weight: bold;">حفظ البيانات</button>
+			</div>
+		</div>
 					<!-- js for datepicker-->
 					<script>
 					$('#datepicker').datepicker({
@@ -100,19 +122,13 @@
 <!-- End Enter Data-->
 
 <!-- Save Button-->
-<div class="container">
-	<div class="row justify-content-center text-center">
-		<div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
-			<br><br><button onclick="validation2();" type="button" class="btn btn-purple btn-block text-center btn btn-primary"style="font-size:20px;font-weight: bold;">حفظ البيانات</button>
-		</div>
-	</div>	
-</div>
+
 <!-- End Save Button-->
 <div class="div1">
 <hr class="incline-line"></hr>
 <hr class="incline-line2"></hr>
 </div>
-
+</form>
 <!-- volunteers-->
 		<div class="container">
 			<h2 class="text-center pt-5 pb-3" style="color:#1e4072;">: المتطوعين المتميزين</h2>

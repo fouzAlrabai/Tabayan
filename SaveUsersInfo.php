@@ -3,7 +3,7 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.2/sweetalert2.all.min.js"></script>
 </head>
 <?php
-    $con=mysqli_connect("localhost","root","Reema1420","mydb");
+    $con=mysqli_connect("192.168.64.2","root","Reema1420","mydb");
 
     session_start();
     if($_SERVER['REQUEST_METHOD']=='POST'){
