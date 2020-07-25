@@ -39,26 +39,26 @@
 
 						<?php
 
-$company_name = "Tabayan";
-$email = "tabayan.noreply@gmail.com";
-if (isset($_POST['submit'])) {
-	$company_name = $_POST["company_name"];
-	$email = $_POST["email_address"];
-	$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*_";
-	$password = substr(str_shuffle($chars), 0, 8);
-	$to = $email;
-	$subject = 'your registration is completed';
-	$message = 'Welcome' . $company_name . ''
-			. 'Your email and password is following :'
-			. 'Email:' . $email . ''
-			. 'Your new password : ' . $password . ''
-			. 'Now you can login with this email and password';
-	$headers = 'From: Your name <'.$email .'>' . "\r\n";
-	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
+	$company_name = "Tabayan";
+	$email = "tabayan.noreply@gmail.com";
+	if (isset($_POST['submit'])) {
+		$company_name = $_POST["company_name"];
+		$email = $_POST["email_address"];
+		$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*_";
+		$password = substr(str_shuffle($chars), 0, 8);
+		$to = $email;
+		$subject = 'your registration is completed';
+		$message = 'Welcome' . $company_name . ''
+				. 'Your email and password is following :'
+				. 'Email:' . $email . ''
+				. 'Your new password : ' . $password . ''
+				. 'Now you can login with this email and password';
+		$headers = 'From: Your name <'.$email .'>' . "\r\n";
+		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
 
-	mail($to, $subject, $message, $headers);
-}
-?>
+		mail($to, $subject, $message, $headers);
+	}
+	?>
  
 
 
