@@ -4,6 +4,7 @@
 <?php
    require_once('config.php');
 if(isset($_POST['submit'])){
+   
             $Data=$_POST['DataEn'];
             $DataKind=$_POST['Dataki'];
             $DataSelect=$_POST['DataSel'];
@@ -13,11 +14,13 @@ if(isset($_POST['submit'])){
                     VALUES ('$Data', '$DataKind','$DataSelect', '$DataDate')";
                     mysqli_query($con,$sql);
                     
-header("location: DataEntry.php?Save=Yes");
-}  
-else{
 
 
-    header("location: DataEntry.php?Save=No");
-}  
+if(mysqli_query($con,$sql)){
+    header("location: DataEntry.php?Save=Yes");
+   
+} else{
+echo'erorr' . mysqli_error($con);
+
+} }
 ?> <?php include 'includes/scripts.php';?>
