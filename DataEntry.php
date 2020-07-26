@@ -1,3 +1,19 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.2/sweetalert2.all.min.js"></script>
+						<?php 
+							if(@$_GET['Save']==true){
+								if(@$_GET['Save']=='Yes'){
+									echo '<script type="text/javascript">';
+									echo 'setTimeout(function () {swal("شكراً لك", " تم حفظ البيانات بنجاح  ", "success", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
+									echo '}, 500);</script>';
+								}elseif (@$_GET['Save']=='No') {
+									echo '<script type="text/javascript">';
+            						echo 'setTimeout(function () {swal("!عذراً، حدث خطأ ما", " لم يتم حفظ البيانات   ", "error", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
+            						echo '}, 500);</script>';
+								}
+							}
+						?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,10 +56,12 @@
 				<!-- End Tabayan description -->
 
 <!-- Enter Data-->
-
+<form action="SaveData.php" method="POST">
 		<div class="container">
-		<form action="DataSaveInfo.php" method="POST">
 		
+		
+
+
 			<div class="row flex-row-reverse text-right">
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
 				        <h4 class="text-right pt-5 pb-3" style="color:#1e4072;">: ادخال البيانات</h3>
@@ -78,7 +96,7 @@
 										<option>الاقتصاد</option>
 										<option>غير ذلك</option>
 								</select>
-								<input  name="DataSel"/>
+								<input type="hidden" name="DataSel"/>
 						 	</div>
 						</div>
 						<!-- datePicker -->
@@ -91,9 +109,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="row justify-content-center text-center">
-				<button type="submit" class="btn btn-purple btn-block text-center btn btn-primary"style="font-size:20px;font-weight: bold;">حفظ البيانات</button>
-			</div>
+					
 		</div>
 					<!-- js for datepicker-->
 					<script>
@@ -103,11 +119,13 @@
 				</div>
 			</div>	
 				<!---End if DatePicker---->		 
-		</div>
+	    </div>
 <!-- End Enter Data-->
 
 <!-- Save Button-->
-
+<div class="row justify-content-center text-center">
+		<button type="submit" name="submit" class="btn btn-purple btn-block text-center btn btn-primary" id="buttonStyle" value="Save" onclick="validation();">حفظ البيانات</button>
+			</div>
 <!-- End Save Button-->
 <div class="div1">
 <hr class="incline-line"></hr>
