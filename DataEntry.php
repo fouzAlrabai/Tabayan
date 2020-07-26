@@ -124,7 +124,7 @@
 
 <!-- Save Button-->
 <div class="row justify-content-center text-center">
-		<button type="submit" name="submit" class="btn btn-purple btn-block text-center btn btn-primary" id="buttonStyle" value="Save" onclick="validation();">حفظ البيانات</button>
+		<button type="submit" name="submit" class="btn btn-purple btn-block text-center btn btn-primary" id="buttonStyle" value="submit()" onclick="validation();">حفظ البيانات</button>
 			</div>
 <!-- End Save Button-->
 <div class="div1">
