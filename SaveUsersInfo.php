@@ -1,52 +1,52 @@
-
-<head>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.2/sweetalert2.all.min.js"></script>
-</head>
 <?php
-    $con=mysqli_connect("localhost","root","Reema1420","mydb");
-
+    //Coonect With Database
+    require_once('config.php');
     session_start();
     if($_SERVER['REQUEST_METHOD']=='POST'){
 
-            $username=$_POST['Email'];
-            $password=$_POST['Password'];
+            $userEmail=$_POST['Email'];
+            $userPassword=$_POST['Password'];
             $userType=$_POST['optradio'];
+            $userName=$_POST['userName'];
 
-            $username=stripcslashes($username);
-            $password=stripcslashes($password);
+            $userEmail=stripcslashes($userEmail);
+            $userPassword=stripcslashes($userPassword);
             $userType=stripcslashes($userType);
-            $username = mysqli_real_escape_string($con,$username);
-            $password = mysqli_real_escape_string($con,$password);
+            $userEmail = mysqli_real_escape_string($con,$userEmail);
+            $userPassword = mysqli_real_escape_string($con,$userPassword);
             $userType = mysqli_real_escape_string($con,$userType);
-        
-            
-            $sql = "INSERT INTO user (user_name, user_password, user_type)
-                    VALUES ('$username', '$password','$userType')";
 
-                    if ($con->query($sql) === TRUE) {
-                        $sql2="update user set user_name = UPPER(user_name)";
+            if ($_POST["Password"] === $_POST["confirm_password"]) {
+                // success
+
+                $sql = "INSERT INTO user (user_email, user_password, user_type, user_name)
+                    VALUES ('$userEmail', '$userPassword','$userType','$userName')";
+
+                     if ($con->query($sql) === TRUE) {
+                        $sql2="update user set user_email = UPPER(user_email)";
                         $result2=mysqli_query($con,$sql2);
-                    // echo '<script type="text/javascript">';
-                    // echo 'setTimeout(function () {swal("شكراً لك", " تم حفظ البيانات بنجاح  ", "success", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
-                    // echo '}, 1000);</script>';
                     
-                    header("location: EnterUsersInfo.php?Save=Yes");
-                
-                    
-                    
-                    } else {
-                        
+                        header("location: EnterUsersInfo.php?Save=Yes"); 
+                    } else {    
                     // echo "Error: " . $sql . "<br>" . $con->error;
                     // echo '<script type="text/javascript">';
                     // echo 'setTimeout(function () {swal("!عذراً، حدث خطأ ما", " لم يتم حفظ البيانات   ", "error", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
                     // echo '}, 1000);</script>';
-
-                    header("location: EnterUsersInfo.php?Save=No");
+                        header("location: EnterUsersInfo.php?Save=No");
                     }
+             }
+             else {
+                // failed 
+                header("location: EnterUsersInfo.php?Error=passwordFails");
+             }
+        
+            
+            
+
+                   
         }else{
             echo "Error: You Cant't Browse This Page Directory";
         }
 
 
 ?>
-<?php include 'includes/scripts.php';?>
