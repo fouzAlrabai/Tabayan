@@ -4,39 +4,52 @@
 
     session_start();
     if($_SERVER['REQUEST_METHOD']=='POST'){
-        $username=$_POST['Email'];
-        $password=$_POST['Password'];
+        $userEmail=$_POST['Email'];
+        $userPassword=$_POST['Password'];
         //Convert username To Uppercase Because It Saved As Uppercase In Database
-        $username=strtoupper($username);
+        $userEmail=strtoupper($userEmail);
 
-        $username=stripcslashes($username);
-        $password=stripcslashes($password);
-        $username = mysqli_real_escape_string($mysqli,$username);
-        $password = mysqli_real_escape_string($mysqli,$password);
+        $userEmail=stripcslashes($userEmail);
+        $userPassword=stripcslashes($userPassword);
+        $userEmail = mysqli_real_escape_string($con,$userEmail);
+        $userPassword = mysqli_real_escape_string($con,$userPassword);
+        
 
     
-        $query="select * from user where user_name='$username' and user_password= '$password' ";
-        $result=mysqli_query($mysqli,$query);
+        $query="select * from user where user_email='$userEmail' and user_password= '$userPassword' ";
+        $result=mysqli_query($con,$query);
         $row=mysqli_fetch_array($result);
 
         if($row>0){
-                if($row['user_name'] == $username && $row['user_password'] == $password){
+                if($row['user_email'] == $userEmail && $row['user_password'] == $userPassword  ){
                     //If A User Is Data Checker 
-                    if($row['user_type']=="DataChecker"){
+                    if($row['user_status']=='active'){
+                        if($row['user_type']=="مدقق بيانات"){
+                            
+                            $_SESSION["UserEmail"] = $row['user_email'];
+                            $_SESSION["UserPass"] = $row['user_password'];
+                            $_SESSION["UserType"] = $row['user_type'];
+                            header("location: DataChecker.php");
+                        //If A User Is Data Entry 
+                        }if($row['user_type']=="مدخل بيانات"){
 
-                        $_SESSION["UserName"] = $row['user_name'];
-                        $_SESSION["UserPass"] = $row['user_password'];
-                        $_SESSION["UserType"] = $row['user_type'];
-                        header("location: DataChecker.php");
-                    //If A User Is Data Entry 
-                    }if($row['user_type']=="DataEntry"){
+                            $_SESSION["UserEmail"] = $row['user_email'];
+                            $_SESSION["UserPass"] = $row['user_password'];
+                            $_SESSION["UserType"] = $row['user_type'];
+                            header("location: DataEntry.php");  
 
-                        $_SESSION["UserName"] = $row['user_name'];
-                        $_SESSION["UserPass"] = $row['user_password'];
-                        $_SESSION["UserType"] = $row['user_type'];
-                        header("location: DataEntry.php");  
+                        } //End If
+                        if($row['user_type']=="Admin"){
 
-                    } //End If
+                            $_SESSION["UserEmail"] = $row['user_email'];
+                            $_SESSION["UserPass"] = $row['user_password'];
+                            $_SESSION["UserType"] = $row['user_type'];
+                            header("location: Admin.php");  
+
+                        } //End If
+                    }else{
+                    header("location: index.php?Error= هذا المشارك لم يتم تفعيل حسابه في المبادرة بعد");    
+                    }
 
                 }else{
 

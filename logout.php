@@ -2,7 +2,7 @@
 session_start();
 
 // IF Not Logged In 
-if(!isset($_SESSION['UserName']))
+if(!isset($_SESSION['UserEmail']))
 {
     // not logged in
     header('Location: index.php');
@@ -19,10 +19,10 @@ if(!isset($_SESSION['UserName']))
         if( $result){
 
             while($row=mysqli_fetch_array($result)){
-                $user_name=$row['user_name'];
+                $user_email=$row['user_email'];
                 $ID=$row['data_id'];
                 //Inset Checked Data Into data_checked Table
-                $sql4="INSERT INTO `data_checked` (`user_name`, `data_id`) VALUES ('$user_name', '$ID')";
+                $sql4="INSERT INTO `data_checked` (`user_email`, `data_id`) VALUES ('$user_email', '$ID')";
                 $result4=mysqli_query($con,$sql4);
                 }//End While
                 

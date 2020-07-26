@@ -7,7 +7,7 @@
     if(isset($_POST['ID'])){
         $Type=$_POST['Type'];
         $ID=$_POST['ID'];
-        $user_name=$_SESSION["UserName"];
+        $user_email=$_SESSION["UserEmail"];
         if($Type=="rumor"){
             //Increment Rumor Counter
             $sql="UPDATE data SET rumorCount=rumorCount+1 WHERE data_ID='$ID'";
@@ -15,11 +15,11 @@
             
             if($result){
                 //Increment User Check Data Counter
-                $sql2="UPDATE user SET user_dataCount=user_dataCount+1 WHERE user_name='$user_name'";
+                $sql2="UPDATE user SET user_dataCount=user_dataCount+1 WHERE user_email='$user_email'";
                 $result2=mysqli_query($con,$sql2);
 
                 //Insert Checked Data Into dataCheckTemporarily Table
-                $sql4="INSERT INTO `dataCheckTemporarily` (`user_name`, `data_id`) VALUES ('$user_name', '$ID')";
+                $sql4="INSERT INTO `dataCheckTemporarily` (`user_email`, `data_id`) VALUES ('$user_email', '$ID')";
                 $result4=mysqli_query($con,$sql4);
                 return 'data update';
             }
@@ -31,11 +31,11 @@
            
             if($result){
                 //Increment User Check Data Counter
-                $sql2="UPDATE user SET user_dataCount=user_dataCount+1 WHERE user_name='$user_name'";
+                $sql2="UPDATE user SET user_dataCount=user_dataCount+1 WHERE user_email='$user_name'";
                 $result2=mysqli_query($con,$sql2);
 
                 //Insert Checked Data Into dataCheckTemporarily Table
-                $sql4="INSERT INTO `dataCheckTemporarily` (`user_name`, `data_id`) VALUES ('$user_name', '$ID')";
+                $sql4="INSERT INTO `dataCheckTemporarily` (`user_email`, `data_id`) VALUES ('$user_email', '$ID')";
                 $result4=mysqli_query($con,$sql4);
                 return 'data update';
 

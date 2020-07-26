@@ -26,17 +26,23 @@
 						if(@$_GET['Save']==true){
 							if(@$_GET['Save']=='Yes'){
 								echo '<script type="text/javascript">';
-								echo 'setTimeout(function () {swal("شكراً لك", " تم ارسال طلب مشاركة سوف نتواصل معك في اقرب وقت ممكن    ", "success", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
+								echo 'setTimeout(function () {swal("شكراً لك", " تم ارسال طلب مشاركة سوف نتواصل معك في اقرب وقت ممكن    ", "success", { buttons: { catch: { text: "تم",value: "catch",},},timer: 3000}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
 								echo '}, 500);</script>';
 
 							//Fail to Send Request
 							}elseif (@$_GET['Save']=='No') {
 								echo '<script type="text/javascript">';
-								echo 'setTimeout(function () {swal("!عذراً، حدث خطأ ما", " لم يتم ارسال الطلب    ", "error", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
+								echo 'setTimeout(function () {swal("!عذراً، حدث خطأ ما", " لم يتم ارسال الطلب    ", "error", { buttons: { catch: { text: "تم",value: "catch",},},timer: 3000}).then((value) => { window.location.href="EnterUsersInfo.php"; });';
 								echo '}, 500);</script>';
 							}
 						}
-					?>
+
+						if(@$_GET['Error']==true)
+							{?>
+								<div class=" text-danger py-3 "><?php echo "كلمات المرور غير متطابقة"?></div>
+						<?php } ?>
+
+					
 					
 					<div class="form-group ">
 						<input type="email" class="form-control text-right" id="Email" name="Email" placeholder="البريد الإلكتروني" required >
@@ -44,6 +50,10 @@
 					
 					<div class="form-group">
 						<input type="password" class="form-control text-right" id="Password" name="Password" placeholder="كلمة المرور" required>
+					</div>
+
+					<div class="form-group">
+						<input type="password" class="form-control text-right" id="confirm_password" name="confirm_password" placeholder="تاكيد كلمة المرور" required>
 					</div>
 
 					<div class="form-group">
@@ -56,14 +66,14 @@
 							<div class="form-check-inline ">
 						
 								<label class="form-check-label">
-									<input type="radio" class="form-check-input" name="optradio" value="DataEntry" required>مدخل بيانات 
+									<input type="radio" class="form-check-input" name="optradio" value="مدخل بيانات" required>مدخل بيانات 
 								</label>
 
 							</div>
 
 							<div class="form-check-inline">
 								<label class="form-check-label">
-									<input type="radio" class="form-check-input" name="optradio" value="DataChecker">مدقق بيانات
+									<input type="radio" class="form-check-input" name="optradio" value="مدقق بيانات" required>مدقق بيانات
 								</label>
 							</div>
 
@@ -71,10 +81,11 @@
 					</div>
 	
 					<div class="row justify-content-center text-center py-3">
-						<div class=" col-lg-5 col-md-5 col-sm-5 col-xs-5 " >
-							<button type="submit" class="btn btn-purple btn-block text-center btn btn-primary" id="buttonStyle" value="Login" onclick="validation2();">ارسال</button>
-						</div>
+						<!-- <div class=" col-lg-5 col-md-5 col-sm-5 col-xs-5 " > -->
+							<button type="submit" class="btn btn-purple btn-block text-center btn btn-primary" id="buttonStyle" value="Send">ارسال</button>
+						<!-- </div> -->
 					</div>
+					<a href="index.php"><h6 class="text-center" style="color:#687089; padding:5px 0px 0px 0px; font-weight: bold"> مشترك بالفعل في المبادرة ؟ تسجيل الدخول </h6></a>
 		
 				</form>
 					

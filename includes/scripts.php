@@ -64,13 +64,13 @@ function getID() {
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript">
 			function validation(){
-                swal("شكراً لك", " لقد ساهمت للتو بزيادة المحتوى العربي  ", "success", {
+                swal("شكراً لك", " لقد ساهمت للتو بزيادة المحتوى العربي  ", "success",  {
                     buttons: {
                         catch: {
                             text: "تم",
                             value: "catch",
                         },
-                    },
+                    },timer: 3000
                 })
                 .then((value) => {
                     var Type=get();
@@ -99,7 +99,7 @@ function getID() {
                             text: "تم",
                             value: "catch",
                         },
-                    },
+                    },timer: 3000
                 })
                 .then((value) => {
                     window.location.href="DataEntry.php"; 

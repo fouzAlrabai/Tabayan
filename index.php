@@ -37,7 +37,7 @@
 				<?php 
 					}if(@$_GET['Logout']==true){
 						echo '<script type="text/javascript">';
-						echo 'setTimeout(function () {swal(" ", " تم تسحيل الخروج بنجاح    ", "success", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="index.php"; });';
+						echo 'setTimeout(function () {swal(" ", " تم تسحيل الخروج بنجاح    ", "success", { buttons: { catch: { text: "تم",value: "catch",},},timer: 3000}).then((value) => { window.location.href="index.php"; });';
 						echo '}, 300);</script>';
 						}
 				?>

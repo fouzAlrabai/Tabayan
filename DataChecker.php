@@ -18,8 +18,8 @@
 		$start_from= ($pages-1)*01;
 
 		session_start();
-		$username=$_SESSION["UserName"];
-		$query="SELECT *  FROM data WHERE data_ID NOT IN(SELECT data_id FROM data_checked WHERE user_name='$username') limit $start_from,$num_per_page";
+		$userEmail=$_SESSION["UserEmail"];
+		$query="SELECT *  FROM data WHERE data_ID NOT IN(SELECT data_id FROM data_checked WHERE user_email='$userEmail') limit $start_from,$num_per_page";
 		$result=mysqli_query($con,$query);
 		$numOfRow=mysqli_num_rows($result);
 ?>	
@@ -41,7 +41,7 @@
 <!--- End header -->
 
 <!-- IF Not Logged In --> 
-<?php if(!isset($_SESSION['UserName']))
+<?php if(!isset($_SESSION['UserEmail']))
 {
     // not logged in
     header('Location: index.php');
@@ -138,7 +138,7 @@
 			<div class="row d-flex justify-content-around ">
 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 					<?php
-						$pr_query = "select * from data";
+						$pr_query = "SELECT *  FROM data WHERE data_ID NOT IN(SELECT data_id FROM data_checked WHERE user_email='$userEmail')";
 						$pr_result = mysqli_query($con,$pr_query);
 						$total_record=mysqli_num_rows($pr_result);
 						$total_page=ceil($total_record/$num_per_page);
