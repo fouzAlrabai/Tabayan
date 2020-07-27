@@ -4,7 +4,7 @@
     require_once('config.php');
 
     session_start();
-//     if($_SERVER['REQUEST_METHOD']=='POST'){
+    if($_SERVER['REQUEST_METHOD']=='POST'){
 
             $DataEntry=$_POST['dataen'];
             $DataKind=$_POST['happy'];
@@ -12,38 +12,42 @@
                 $DataKind="لا اعلم";    
             }
             $DataSup=$_POST['dataSubject'];
-        //     $DataDate=$_POST['datepicker'];
-            // $DataDate=$("#datepicker").datepicker("getDate");
-            echo "البيانات : ".$DataEntry."</br> نوع البيانات:  ".$DataKind."</br> مجال البيانات:  ".$DataSup."</br> تاريخ النشر:  ".$DataDate;
+            $DataDate=$_POST['datepicker'];
+           
 
-        //     $DataEntry=stripcslashes($DataEntry);
-        //     $DataKind=stripcslashes($DataKind);
-        //     $DataSup=stripcslashes($DataSup);
-        //     $DataDate=stripcslashes($DataDate);
+            $DataEntry=stripcslashes($DataEntry);
+            $DataKind=stripcslashes($DataKind);
+            $DataSup=stripcslashes($DataSup);
+            $DataDate=stripcslashes($DataDate);
+            $userEmail=$_SESSION["UserEmail"];
 
-        //     $DataEntry = mysqli_real_escape_string($con,$DataEntry);
-        //     $DataKind = mysqli_real_escape_string($con,$DataKind);
-        //     $DataSup = mysqli_real_escape_string($con,$DataSup);           
-        //     $DataDate = mysqli_real_escape_string($con,$DataDate);
+            $DataEntry = mysqli_real_escape_string($con,$DataEntry);
+            $DataKind = mysqli_real_escape_string($con,$DataKind);
+            $DataSup = mysqli_real_escape_string($con,$DataSup);           
+            $DataDate = mysqli_real_escape_string($con,$DataDate);
+            $userEmail= mysqli_real_escape_string($con,$userEmail);
 
-        
-            
-        //     $sql = "INSERT INTO data (Data, data_kind, data_subject ,data_date)
-        //             VALUES ('$DataEntry', '$DataKind','$DataSup','$DataDate')";
 
-                   
+
+            $sql="INSERT INTO `data` (`data_kind`, `data_date`,`data_subject`,`Data`,`user_email`) VALUES ('$DataKind', '$DataDate' , '$DataSup' , '$DataEntry', '$userEmail')";
+                $result=mysqli_query($con,$sql);
+               
+
+                if($result==true){
+
+                    header("location: DataEntry.php?Save=Successful");
+                }else{
+
+                    header("location: DataEntry.php?Save=Fail");
+                }
+            }
+   
                     
                     
-        //             header("location: DataEntry.php?Save=Yes");
-                
-                    
-                    
-        //             }
-        //              else {
+            else {
                         
-                   
+                   echo "can't use this page";
 
-        //             header("location: DataEntry.php?Save=No");
     
-        //             }
+                    }
 ?>

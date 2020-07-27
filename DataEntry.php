@@ -66,6 +66,30 @@
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
 					
 					<form action="SaveData.php" method="POST">
+
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.2/sweetalert2.all.min.js"></script>
+
+					<!--Send Request Successfully-->
+					<?php 
+						if(@$_GET['Save']==true){
+							if(@$_GET['Save']=='Successful'){
+								echo '<script type="text/javascript">';
+								echo 'setTimeout(function () {swal("عمل جميل", "تم حفظ البيانات بنجاح ", "success", { buttons: { catch: { text: "تم",value: "catch",},},timer: 2000}).then((value) => { window.location.href="DataEntry.php"; });';
+								echo '}, 500);</script>';
+
+							//Fail to Send Request
+							}elseif (@$_GET['Save']=='Fail') {
+								echo '<script type="text/javascript">';
+								echo 'setTimeout(function () {swal("!عذراً، حدث خطأ ما", " لم يتم حفظ البيانات    ", "error", { buttons: { catch: { text: "تم",value: "catch",},},timer: 2000}).then((value) => { window.location.href="DataEntry.php"; });';
+								echo '}, 500);</script>';
+							}
+						}
+
+						if(@$_GET['Error']==true)
+							{?>
+								<div class=" text-danger py-3 "><?php echo "كلمات المرور غير متطابقة"?></div>
+						<?php } ?>
+						
 				        <h4 class="text-right pt-5 pb-3" style="color:#1e4072;">: ادخال البيانات</h3>
 						<textarea class="form-control" name="dataen" aria-label="With textarea" style="padding:0px 30px 15px; "dir="rtl" required></textarea>
 						<h4 class="text-right pt-5 pb-3" style="color:#1e4072;">: نوع البيانات </h4>
@@ -115,6 +139,9 @@
 					$('#datepicker').datepicker({
 					uiLibrary: 'bootstrap'});
 					// $("#datepicker").find(".active").attr("data-date");
+					$('#datepicker').on('changeDate',function(e){
+						var date=e.date;
+					})
 					</script>
 				</div>
 			</div>	
