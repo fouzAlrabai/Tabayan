@@ -1,33 +1,4 @@
-<?php
-require_once('connection.php');
-require('config.php');
-require('PHPMailer/PHPMailerAutoload.php');
-if(isset($_POST) & !empty($_POST)){
-	$username = mysqli_real_escape_string($connection, $_POST['username']);
-	$sql = "SELECT * FROM `login` WHERE username = '$username'";
-	$res = mysqli_query($connection, $sql);
-	$count = mysqli_num_rows($res);
-	if($count == 1){
-		$r = mysqli_fetch_assoc($res);
-		$password = $r['password'];
-		$to = $r['email'];
-		$subject = "Your Recovered Password";
- 
-		$message = "Please use this password to login " . $password;
-		$headers = "From : vivek@codingcyber.com";
-		if(mail($to, $subject, $message, $headers)){
-		echo "Your Password has been sent to your email id";
-		}else{
-		echo "Failed to Recover your password, try again";
-		}
- 
-	}else{
-		echo "User name does not exist in database";
-	}
-}
- 
- 
-?>
+
 
 
 <!DOCTYPE html>
@@ -35,7 +6,7 @@ if(isset($_POST) & !empty($_POST)){
 <head>
 		<?php include 'includes/head.php';?>
 </head>
-<body>
+<body> 
 <!--- Image Slider -->
 <div id="bgimage">
 <h1 class="text-center" style="padding:150px 0px 0px; color:white; font-weight: bold" id="TabayanSmall">مبادرة تبيّن</h1>
@@ -66,7 +37,31 @@ if(isset($_POST) & !empty($_POST)){
 
 						<button type="button" class="btn btn-purple btn-block text-center btn btn-primary" id="buttonStyle">تعيين كلمة المرور</button>
 
-			
+						<?php
+
+	$company_name = "Tabayan";
+	$email = "tabayan.noreply@gmail.com";
+	if (isset($_POST['submit'])) {
+		$company_name = $_POST["company_name"];
+		$email = $_POST["email_address"];
+		$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*_";
+		$password = substr(str_shuffle($chars), 0, 8);
+		$to = $email;
+		$subject = 'your registration is completed';
+		$message = 'Welcome' . $company_name . ''
+				. 'Your email and password is following :'
+				. 'Email:' . $email . ''
+				. 'Your new password : ' . $password . ''
+				. 'Now you can login with this email and password';
+		$headers = 'From: Your name <'.$email .'>' . "\r\n";
+		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
+
+		mail($to, $subject, $message, $headers);
+	}
+	?>
+ 
+
+
 					</form>
 					
 			</div>

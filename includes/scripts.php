@@ -6,7 +6,8 @@
 <script src="segment.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-var sel="";
+var sel="لا اعلم";
+// var Date="1/1/1111"
 //If Click On Data Type
 $('#radioBtn a').on('click', function Type(){
     
@@ -21,6 +22,7 @@ $('#radioBtn a').on('click', function Type(){
     $('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
 
 })
+
 //If Click On Next Button
 $(document).ready(function(){
   $("#next").click(function(){
@@ -55,9 +57,26 @@ function setID(n){
 }
 
 function getID() {
-    return id;
-    
+    return id;   
 }
+
+// $("#datepicker").datepicker({
+//     onSelect: function() { 
+//         var dateObject = $(this).datepicker('getDate'); 
+//         setDate(dateObject);
+//     }
+// });
+
+// function setDate(dateObject){
+//     Date=dateObject;
+// }
+
+// function getDate(){
+//     return Date;
+// }
+
+// $("#datepicker").datepicker("getDate");
+
 
 </script>
 <!--Alert If Finish Check-->
