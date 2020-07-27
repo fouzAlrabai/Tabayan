@@ -1,16 +1,21 @@
-<?php
-require_once('config.php');
+<head>
+<link rel="stylesheet" type="text/css" href="form.css">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add Issue</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
 
+$(function () {
+            $("#datepicker").datepicker({ dateFormat: "yy-mm-dd", changeMonth: true, changeYear: true });
+        });
+  </script>
+  <fieldset>
+<legend><span class="number">1</span> Due Date</legend>
+<input type="text" name="datepicker" id="datepicker">
+</fieldset>
 
-    // $sql="SELECT u.user_name, d.data_id FROM user AS u, data AS d WHERE u.user_email='FOUZ@GMAIL.COM'";
-    // $query="SELECT d.DName, a.CName, a.ADate, a.ATime, a.IdAppointment FROM appointment AS a, doctor AS d WHERE a.File_Num =".$id." AND a.DUserName = d.UserName ORDER BY ADate, ATime ASC";
-    $sql="SELECT b.*, a.user_name FROM check AS b INNER JOIN user as A ON (b.user_name=a.user_name)";
-    $result=mysqli_query($con,$sql);
-    while($row=mysqli_fetch_array($result)){
-        
-        echo " ID: ".$row['data_id']." user: ".$row['user_name']."</br>";
-
-    	}
-    
-   
-?>
+</head>
