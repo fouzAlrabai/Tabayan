@@ -30,7 +30,7 @@
 
 <?php session_start();?>
 
-<?php if(!isset($_SESSION['UserName']))
+<?php if(!isset($_SESSION['UserEmail']))
 {
     // not logged in
     header('Location: index.php');
@@ -53,7 +53,7 @@
 			</div>
 		</div>
 </div>
-				<!-- End Tabayan description -->
+<!-- End Tabayan description -->
 
 <!-- Enter Data-->
 <form action="SaveData.php" method="POST">

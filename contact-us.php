@@ -4,9 +4,11 @@
 		<?php include 'includes/head.php';?>
 </head>
 <body>
-
+<!-- Start Header-->
 <?php $page ='contact-us';include 'includes/navbar.php';?>
- 
+<!-- End Header-->
+
+<!-- Start Contact-Us Info-->
 <div id="bgimage">
     </div>
 		<div class="container" style="padding:30px">
@@ -28,9 +30,9 @@
 				</div>
 			</div>	
 		</div>						
-	</div><!--- End Row -->
- </div><!--- End Container -->
-
+	</div>
+ </div><!--- End bgimage -->
+<!-- End Contact-Us Info-->
 
 <!--- Start Footer -->
 <?php include 'includes/footer.php';?>

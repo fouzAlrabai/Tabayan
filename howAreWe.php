@@ -7,8 +7,11 @@
 <div id="bgimage">
 </div>
 
+<!--- Start header -->
 <?php $page ='how';include 'includes/navbar.php';?>
+<!--- End header -->
 
+<!-- Tabayan description -->
 <div class="container">
 	<div class="row justify-content-center text-center">
 		
@@ -23,10 +26,8 @@
 		</div>
 	</div>
 </div>
-
+<!-- End Tabayan description -->
     
-
-
 <!--- Start Footer -->
 <?php include 'includes/footer.php';?>
 <!--- End of Footer -->
