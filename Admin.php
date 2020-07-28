@@ -114,7 +114,12 @@ height: 220px;
 								echo '}, 500);</script>';
 							}
 
-						} ?>	
+						} 
+						if(@$_GET['email']==true){
+							echo '<script type="text/javascript">';
+							echo 'setTimeout(function () {swal( " خطا في ارسال الايميل", " " ,"success", { buttons: { catch: { text: "تم",value: "catch",},},timer: 3000}).then((value) => { window.location.href="Admin.php"; });';
+							echo '}, 500);</script>';
+						}?>	
 			<thead>
 				<tr>
 					<th>الاسم </th>

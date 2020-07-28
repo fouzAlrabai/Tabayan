@@ -110,7 +110,7 @@ function getID() {
 </script>
 
 <!--Alert If Enter Data-->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 			public function validation2(){
                 swal("عمل جميل", "تم حفظ البيانات بنجاح ", "success",{
                     buttons: {
@@ -124,5 +124,5 @@ function getID() {
                     window.location.href="DataEntry.php"; 
                 });         
 			}
-</script>
+</script> -->
 

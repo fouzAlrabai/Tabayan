@@ -27,8 +27,6 @@
             $DataDate = mysqli_real_escape_string($con,$DataDate);
             $userEmail= mysqli_real_escape_string($con,$userEmail);
 
-
-
             $sql="INSERT INTO `data` (`data_kind`, `data_date`,`data_subject`,`Data`,`user_email`) VALUES ('$DataKind', '$DataDate' , '$DataSup' , '$DataEntry', '$userEmail')";
                 $result=mysqli_query($con,$sql);
                

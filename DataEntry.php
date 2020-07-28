@@ -138,7 +138,7 @@
 					<script>
 					$('#datepicker').datepicker({
 					uiLibrary: 'bootstrap'});
-					// $("#datepicker").find(".active").attr("data-date");
+					
 					$('#datepicker').on('changeDate',function(e){
 						var date=e.date;
 					})
