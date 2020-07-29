@@ -11,6 +11,7 @@
             $userPassword=$_POST['Password'];
             $userType=$_POST['optradio'];
             $userName=$_POST['userName'];
+            $userEmail=strtoupper($userEmail);
 
             $userEmail=stripcslashes($userEmail);
             $userPassword=stripcslashes($userPassword);
@@ -26,8 +27,6 @@
                     VALUES ('$userEmail', '$userPassword','$userType','$userName')";
 
                      if ($con->query($sql) === TRUE) {
-                        $sql2="update user set user_email = UPPER(user_email)";
-                        $result2=mysqli_query($con,$sql2);
                     
                         header("location: EnterUsersInfo.php?Save=Yes"); 
                     } else {    

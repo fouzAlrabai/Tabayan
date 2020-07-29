@@ -13,13 +13,15 @@ $mail->isSMTP();
 $mail->Host = "smtp.gmail.com";
 
 $mail->SMTPAuth =true;
-$mail->Username = "fooooz399@gmail.com";
-$mail->Password= 'foz831419foz';
+$mail->Username = "tabayanteam@gmail.com";
+$mail->Password= '090807tbn';
 $mail->Port = 465;
 $mail->SMTPSecure ="ssl";
 
 $mail->isHTML(true);
-$mail->setFrom("fooooz399@gmail.com","Tabayan");
+$mail->setFrom("tabayanteam@gmail.com","Tabayan");
+$mail->Subject ="Tabayan initiative";
+$mail->AddEmbeddedImage('img/logoInEmail.png', 'logoimg', 'img/logoInEmail.png'); // attach file img/Picture 2.png', and later link to it using identfier logoimg
 // $mail->addAddress("fouzalrabaye@gmail.com");
 // $mail->Subject ="test";
 // $mail->Body="hello world";

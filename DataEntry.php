@@ -136,11 +136,17 @@
 		</div>
 					<!-- js for datepicker-->
 					<script>
+					// $('#datepicker').datepicker({
+					// uiLibrary: 'bootstrap'});
+
 					$('#datepicker').datepicker({
-					uiLibrary: 'bootstrap'});
+						format: 'yyyy/mm/dd',
+						uiLibrary: 'bootstrap'
+					});
 					
 					$('#datepicker').on('changeDate',function(e){
-						var date=e.date;
+						var date = $("#datepicker").datepicker("getDate");
+						alert("Hello! I am an alert box!");
 					})
 					</script>
 				</div>

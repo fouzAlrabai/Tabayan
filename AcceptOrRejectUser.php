@@ -28,8 +28,37 @@
         //    $message="نعتذر تم وفض الاشتراك في مبادرة تبين ";
         //    mail( $key, 'مبادرة تبين', $message);
             $mail->addAddress($key);
-            $mail->Subject ="Tabayan initiative";
-            $mail->Body="نعتذر تم رفض طلبك للانظمام لمبادرة تبيّن";
+           
+
+            $mail->Body="<html lang='HE'>
+            <head>
+            <title>
+                مبادرة تبيّن
+            </title>
+            </head>
+            <body style='text-align:right; direction:rtl;'>
+                <table>
+                    <tr>
+                        <td><h3>السلام عليكم ورحمة الله وبركاته:</h4></td>
+                    </tr>
+    
+                    <tr>
+                    <td>نعتذر عن قبول انظمامك لمبادرة تبيّن </td>
+                    </tr>
+
+                    <br>
+                    <br>
+                    <tr>
+                        <td><h2>فريق تبيّن</h2></td> 
+    
+                    </tr>
+    
+                    <tr>
+                    <img src=\"cid:logoimg\" style='direction:rtl;' width=90 height=60/>
+                </tr>
+                </table>
+            </body>
+        </html>";
             if($mail->send()){
            header("location: Admin.php?Done=delete");
             }else{
@@ -62,12 +91,51 @@
                
         
            <?php
-        //    $message="تم تفعيل الاشتراك في مبادرة تبين ";
-        //     mail( $key, 'مبادرة تبين', $message);
-        //    header("location: Admin.php?Done=update");
+
         $mail->addAddress($key);
-        $mail->Subject ="Tabayan initiative";
-        $mail->Body="تم قبول طلبك للانظمام لمبادرة تبين، يمكن تسجيل الدخول للمنصة والمساهمة معنا في زيادة المحتوى العربي";
+        
+        $mail->Body="<html lang='HE'>
+        <head>
+        <title>
+            مبادرة تبيّن
+        </title>
+        </head>
+        <body style='text-align:right; direction:rtl;'>
+            <table>
+                <tr>
+                    <td><h3>السلام عليكم ورحمة الله وبركاته:</h4></td>
+                </tr>
+
+                <tr>
+                    <td>يسعد فريق تبيّن بإبلاغك بأنه تم قبول طلبك للإنظمام لمبادرة تبيّن </td>
+                </tr>
+
+                <tr>
+                    <td>يمكنك الآن تسجيل الدخول <a href='http://192.168.64.2/Tabayan/index.php'>منصة تبيّن</a> </td>   
+                          
+                </tr>
+
+                    <br>
+                <tr>
+                    <td>نشكر لك إسهامك معنا في إثراء المحتوى العربي</td>
+                </tr>
+                <br>
+                <br>
+                <tr>
+                    <td><h2>فريق تبيّن</h2></td> 
+
+                </tr>
+
+                <tr>
+                <img src=\"cid:logoimg\" style='direction:rtl;' width=90 height=60/>
+            </tr>
+            </table>
+        </body>
+    </html>";
+
+    // $mail->Body="<h1  style='direction:rtl;'>Test 1 of PHPMailer html</h1>
+    // <p>This is a test picture: <img src=\"cid:logoimg\" width=90 height=60/></p>";
+
         if($mail->send()){
        header("location: Admin.php?Done=update");
         }else{

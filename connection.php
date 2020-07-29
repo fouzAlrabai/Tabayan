@@ -31,7 +31,7 @@
            
             if($result){
                 //Increment User Check Data Counter
-                $sql2="UPDATE user SET user_dataCount=user_dataCount+1 WHERE user_email='$user_name'";
+                $sql2="UPDATE user SET user_dataCount=user_dataCount+1 WHERE user_email='$user_email'";
                 $result2=mysqli_query($con,$sql2);
 
                 //Insert Checked Data Into dataCheckTemporarily Table

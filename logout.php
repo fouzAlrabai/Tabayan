@@ -10,7 +10,7 @@ if(!isset($_SESSION['UserEmail']))
 }else{
 
     $userType=$_SESSION["UserType"];
-    if($userType=='DataChecker'){
+    if($userType=='مدقق بيانات'){
 
         require_once('config.php');
         $sql="SELECT * FROM dataCheckTemporarily ";
