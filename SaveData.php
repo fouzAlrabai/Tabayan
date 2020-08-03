@@ -29,10 +29,15 @@
             $timestamp = time() + 60*60;
             $dataTimeStamp= date('Y-m-d H:i:s', $timestamp);
 
+            if($DataDate==""){
+                $sql="INSERT INTO `data` (`data_kind`,`data_subject`,`Data`,`user_email`, `data_timeStamp`) VALUES ('$DataKind', '$DataSup' , '$DataEntry', '$userEmail','$dataTimeStamp')";
+                $result=mysqli_query($con,$sql);
+            }else{
+
             $sql="INSERT INTO `data` (`data_kind`, `data_date`,`data_subject`,`Data`,`user_email`, `data_timeStamp`) VALUES ('$DataKind', '$DataDate' , '$DataSup' , '$DataEntry', '$userEmail','$dataTimeStamp')";
                 $result=mysqli_query($con,$sql);
                
-
+            }
                 if($result==true){
 
                     header("location: DataEntry.php?Save=Successful");

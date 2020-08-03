@@ -7,7 +7,7 @@
         $userEmail=$_POST['Email'];
         $userPassword=$_POST['Password'];
         //Convert username To Uppercase Because It Saved As Uppercase In Database
-        $userEmail=strtoupper($userEmail);
+        $userEmail=strtolower($userEmail);
 
         $userEmail=stripcslashes($userEmail);
         $userPassword=stripcslashes($userPassword);

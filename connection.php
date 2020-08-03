@@ -19,7 +19,7 @@
                 $result2=mysqli_query($con,$sql2);
 
                 //Insert Checked Data Into dataCheckTemporarily Table
-                $sql4="INSERT INTO `dataCheckTemporarily` (`user_email`, `data_id`) VALUES ('$user_email', '$ID')";
+                $sql4="INSERT INTO `#dataCheckTemporarily` (`user_email`, `data_id`) VALUES ('$user_email', '$ID')";
                 $result4=mysqli_query($con,$sql4);
                 return 'data update';
             }
@@ -35,7 +35,7 @@
                 $result2=mysqli_query($con,$sql2);
 
                 //Insert Checked Data Into dataCheckTemporarily Table
-                $sql4="INSERT INTO `dataCheckTemporarily` (`user_email`, `data_id`) VALUES ('$user_email', '$ID')";
+                $sql4="INSERT INTO `#dataCheckTemporarily` (`user_email`, `data_id`) VALUES ('$user_email', '$ID')";
                 $result4=mysqli_query($con,$sql4);
                 return 'data update';
 

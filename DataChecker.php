@@ -112,9 +112,11 @@
 						<?php
 							while($row=mysqli_fetch_array($result)){	
 						?>
-
-						<?php echo "<font color='#1e4072'; font size=4px >الخبر : "."<font color='black' ; font size=4px >". $row['Data']."<br/>"."<br/>"." <font color='#1e4072'; font size=4px >نوع الخبر : "."<font color='black' ; font size=4px >".$row['data_kind'];
-						$ID=$row['data_ID'];
+						<?php if($row['data_date']==""){
+ 						echo "<font color='#1e4072'; font size=4px >الخبر : "."<font color='black' ; font size=4px >". $row['Data']."<br/>"."<br/>"." <font color='#1e4072'; font size=4px >نوع الخبر : "."<font color='black' ; font size=4px >".$row['data_kind']."<br/>"."<br/>"." <font color='#1e4072'; font size=4px >تاريخ نشر الخبر : "."<font color='black' ; font size=4px > لا يوجد تاريخ مدخل";
+						} else {?>
+						<?php echo "<font color='#1e4072'; font size=4px >الخبر : "."<font color='black' ; font size=4px >". $row['Data']."<br/>"."<br/>"." <font color='#1e4072'; font size=4px >نوع الخبر : "."<font color='black' ; font size=4px >".$row['data_kind']."<br/>"."<br/>"." <font color='#1e4072'; font size=4px >تاريخ نشر الخبر : "."<font color='black' ; font size=4px >".$row['data_date'];
+						$ID=$row['data_ID'];}
 						?>
 					
 						<?php } ?><!--Close While-->

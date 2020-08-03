@@ -11,7 +11,7 @@
             $userPassword=$_POST['Password'];
             $userType=$_POST['optradio'];
             $userName=$_POST['userName'];
-            $userEmail=strtoupper($userEmail);
+            $userEmail=strtolower($userEmail);
 
             $userEmail=stripcslashes($userEmail);
             $userPassword=stripcslashes($userPassword);
