@@ -40,7 +40,7 @@
 
 						if(@$_GET['Error']==true)
 							{?>
-								<div class=" text-danger py-3 "><?php echo "كلمات المرور غير متطابقة"?></div>
+								<div class=" text-danger py-3 "><?php echo "كلمتا المرور غير متطابقتين"?></div>
 						<?php } ?>
 
 					

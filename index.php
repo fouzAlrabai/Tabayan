@@ -40,6 +40,20 @@
 						echo 'setTimeout(function () {swal(" ", " تم تسحيل الخروج بنجاح    ", "success", { buttons: { catch: { text: "تم",value: "catch",},},timer: 3000}).then((value) => { window.location.href="index.php"; });';
 						echo '}, 300);</script>';
 						}
+
+						if(@$_GET['ResetPass']==true){
+							if(@$_GET['ResetPass']=='Yes'){
+								echo '<script type="text/javascript">';
+								echo 'setTimeout(function () {swal(" ", " تم إعادة تعيين كلمة المرور بنجاح    ", "success", { buttons: { catch: { text: "تم",value: "catch",},},timer: 3000}).then((value) => { window.location.href="index.php"; });';
+								echo '}, 500);</script>';
+
+							//Fail to Send Request
+							}elseif (@$_GET['ResetPass']=='No') {
+								echo '<script type="text/javascript">';
+								echo 'setTimeout(function () {swal("!عذراً، حدث خطأ ما", " لم يتم إعادة تعيين كلمة المرور بنجاح    ", "error", { buttons: { catch: { text: "تم",value: "catch",},},timer: 3000}).then((value) => { window.location.href="index.php"; });';
+								echo '}, 500);</script>';
+							}
+							}
 				?>
 				<!--End Logout Alert -->
 
@@ -53,7 +67,7 @@
 				</div>
 
 				<a href="index.php"><button type="submit" class="btn btn-purple btn-block text-center btn btn-primary" id="buttonStyle" value="Login" >تسحيل الدخول</button></a>
-				<a href="resetPassword.php"><p class="text-right" style="color:#687089; padding:15px 15px 0px 0px"> هل نسيت كلمة المرور؟</p></a>
+				<a href="forgotPassword.php"><p class="text-right" style="color:#687089; padding:15px 15px 0px 0px"> هل نسيت كلمة المرور؟</p></a>
 				<a href="EnterUsersInfo.php"><h6 class="text-center" style="color:#687089; padding:5px 0px 0px 0px; font-weight: bold"> الاشتراك في مبادرة تبيّن</h6></a>
 				
 			</form>

@@ -49,12 +49,12 @@
                     <br>
                     <br>
                     <tr>
-                        <td><h2>فريق تبيّن</h2></td> 
+                        <td><h4>فريق تبيّن</h4></td> 
     
                     </tr>
     
                     <tr>
-                    <img src=\"cid:logoimg\" style='direction:rtl;' width=90 height=60/>
+                    <img src=\"cid:logoimg\" style='direction:rtl;' />
                 </tr>
                 </table>
             </body>
@@ -81,7 +81,6 @@
     
             $key=$_POST['Accept'];
             $_SESSION["user"]=$key;
-            //$q1 ="SELECT * FROM appointment WHERE IdAppointment =".$_POST['ID']."";
             $q1 ="SELECT * FROM user WHERE user_email = '$key'";
             $check=mysqli_query($con,$q1) or die("not found".mysqli_error());
             if(mysqli_num_rows($check)>0){
@@ -122,12 +121,12 @@
                 <br>
                 <br>
                 <tr>
-                    <td><h2>فريق تبيّن</h2></td> 
+                    <td><h4>فريق تبيّن</h4></td> 
 
                 </tr>
 
                 <tr>
-                <img src=\"cid:logoimg\" style='direction:rtl;' width=90 height=60/>
+                <img src=\"cid:logoimg\" style='direction:rtl;'/>
             </tr>
             </table>
         </body>

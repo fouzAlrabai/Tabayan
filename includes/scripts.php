@@ -109,20 +109,6 @@ function getID() {
             }
 </script>
 
-<!--Alert If Enter Data-->
-<!-- <script type="text/javascript">
-			public function validation2(){
-                swal("عمل جميل", "تم حفظ البيانات بنجاح ", "success",{
-                    buttons: {
-                        catch: {
-                            text: "تم",
-                            value: "catch",
-                        },
-                    },timer: 3000
-                })
-                .then((value) => {
-                    window.location.href="DataEntry.php"; 
-                });         
-			}
-</script> -->
+
+
 
