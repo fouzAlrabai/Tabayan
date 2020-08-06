@@ -8,8 +8,26 @@
 	}
 
 	function redirectToLoginPage() {
+		header('Location: login.php');
+		exit();
+	}
+	function redirectToIndexPage() {
 		header('Location: index.php');
 		exit();
+	}
+	function redirectToContactUsPage() {
+		header('Location: contact-us.php');
+		exit();
+	}
+	function userType($str) {
+		$pos = strpos($str, ',', 0); 
+		$type=substr($str,$pos+1);
+		return $type;
+	}
+	function userEmail($str) {
+		$pos = strpos($str, ',', 0); 
+		$type=substr($str,0,$pos);
+		return $type;
 	}
 
 ?>

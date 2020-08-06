@@ -10,11 +10,11 @@
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link <?php if ($page=='how'){echo 'active';}?>" href="howAreWe.php">من نحن </a>
+						<a class="nav-link <?php if ($page=='login'){echo 'active';}?>" href="login.php">تسجيل الدخول </a>
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link <?php if ($page=='login'){echo 'active';}?>" href="index.php">تسجيل الدخول </a>
+						<a class="nav-link <?php if ($page=='how'){echo 'active';}?>" href="index.php">من نحن </a>	
 					</li>
 
 					<li class="nav-item">

@@ -21,6 +21,7 @@ $mail->SMTPSecure ="ssl";
 $mail->isHTML(true);
 $mail->setFrom("tabayanteam@gmail.com","Tabayan");
 $mail->Subject ="Tabayan initiative";
-$mail->AddEmbeddedImage('img/logoInEmail.png', 'logoimg', 'img/logoInEmail.png'); // attach file img/Picture 2.png', and later link to it using identfier logoimg
+// $mail->AddEmbeddedImage('img/logoInEmail.png', 'logoimg', 'img/logoInEmail.png');
+ // attach file img/Picture 2.png', and later link to it using identfier logoimg
 
 ?>

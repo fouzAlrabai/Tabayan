@@ -86,7 +86,7 @@
 							<button type="submit" class="btn btn-purple btn-block text-center btn btn-primary" id="buttonStyle" value="Send">ارسال</button>
 						<!-- </div> -->
 					</div>
-					<a href="index.php"><h6 class="text-center" style="color:#687089; padding:5px 0px 0px 0px; font-weight: bold"> مشترك بالفعل في المبادرة ؟ تسجيل الدخول </h6></a>
+					<a href="login.php"><h6 class="text-center" style="color:#687089; padding:5px 0px 0px 0px; font-weight: bold"> مشترك بالفعل في المبادرة ؟ تسجيل الدخول </h6></a>
 		
 				</form>
 					

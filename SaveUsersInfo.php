@@ -3,6 +3,7 @@
 
     //Coonect With Database
     require_once('config.php');
+    require_once "functions.php";
 
     session_start();
     if($_SERVER['REQUEST_METHOD']=='POST'){
@@ -47,7 +48,7 @@
 
                    
         }else{
-            echo "Error: You Cant't Browse This Page Directory";
+            redirectToIndexPage();
         }
 
 

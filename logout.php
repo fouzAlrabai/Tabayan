@@ -36,7 +36,7 @@ if(!isset($_SESSION['UserEmail']))
     $result=mysqli_query($con,$sql3);
     session_unset();
     session_destroy();
-    header("location: index.php?Logout=no"); 
+    header("location: login.php?Logout=Yes"); 
     exit();
 }//end else 
 ?>

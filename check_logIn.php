@@ -1,6 +1,7 @@
 <?php
     // Connect With Database 
     require_once('config.php');
+    require_once "functions.php";
 
     session_start();
     if($_SERVER['REQUEST_METHOD']=='POST'){
@@ -48,7 +49,7 @@
 
                         } //End If
                     }else{
-                    header("location: index.php?Error= هذا المشارك لم يتم تفعيل حسابه في المبادرة بعد");    
+                    header("location: login.php?Error= هذا المشارك لم يتم تفعيل حسابه في المبادرة بعد");    
                     }
 
                 }else{
@@ -56,14 +57,14 @@
                     // echo '<script type="text/javascript">';
                     // echo 'setTimeout(function () {swal("!عذراً،   ", "البريد الاكتروني او كلمة المرور غير صحيحة    ", "error", { buttons: { catch: { text: "تم",value: "catch",},},}).then((value) => { window.location.href="index.php"; });';
                     // echo '}, 1000);</script>';
-                    header("location: index.php?Error= البريد الإلكتروني أو كلمة المرور غير صحيحة");         
+                    header("location: login.php?Error= البريد الإلكتروني أو كلمة المرور غير صحيحة");         
                 }//End Else
         }
         else{
-            header("location: index.php?Error= البريد الإلكتروني أو كلمة المرور غير صحيحة");
+            header("location: login.php?Error= البريد الإلكتروني أو كلمة المرور غير صحيحة");
         }
     }else {
-        echo "Error: You Cant't Brwose This Page Directory";
+        redirectToIndexPage();
     }
 
 ?>

@@ -90,9 +90,9 @@
 								<div class=" text-danger py-3 "><?php echo "كلمات المرور غير متطابقة"?></div>
 						<?php } ?>
 						
-				        <h4 class="text-right pt-5 pb-3" style="color:#1e4072;">: ادخال البيانات</h3>
+				        <h4 class="text-right pt-5 pb-3" style="color:#1e4072;">: ادخل الخبر</h3>
 						<textarea class="form-control" name="dataen" aria-label="With textarea" style="padding:0px 30px 15px; "dir="rtl" required></textarea>
-						<h4 class="text-right pt-5 pb-3" style="color:#1e4072;">: نوع البيانات </h4>
+						<h4 class="text-right pt-5 pb-3" style="color:#1e4072;">: نوع الخبر </h4>
 
 						<div class="form-group">
     					
@@ -106,7 +106,7 @@
 						</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >		
-						<h4 class="text-right pt-5 pb-3" style="color:#1e4072;">: مجال البيانات </h4>
+						<h4 class="text-right pt-5 pb-3" style="color:#1e4072;">: مجال الخبر </h4>
 										
 						<div class="form-group">
 							<div class="box">
@@ -123,7 +123,7 @@
 						 	</div>
 						</div>
 						<!-- datePicker -->
-						<h4 class="text-right pt-5 pb-3" style="color:#1e4072;">: تاريخ نشر البيانات </h4>
+						<h4 class="text-right pt-5 pb-3" style="color:#1e4072;">: تاريخ نشر الخبر </h4>
 
 						<div class="form-group float-right ">
 							<div class="row jus " >
@@ -146,7 +146,6 @@
 					
 					$('#datepicker').on('changeDate',function(e){
 						var date = $("#datepicker").datepicker("getDate");
-						alert("Hello! I am an alert box!");
 					})
 					</script>
 				</div>
@@ -159,50 +158,15 @@
 <!-- Save Button-->
 <div class="container">
 	<div class="row justify-content-center text-center">
-		<div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
-			<br><br><button type="submit" class="btn btn-purple btn-block text-center btn btn-primary"style="font-size:20px;font-weight: bold;">حفظ البيانات</button>
+		<div class="col-lg-3 col-md-3 col-sm-5 col-xs-5" style ="padding:0px 0px 50px">
+			<br><br><button type="submit" class="btn btn-purple btn-block text-center btn btn-primary"style="font-size:20px;font-weight: bold; ">حفظ البيانات</button>
 		</div>
 	</div>	
 </div>
 </form>
 <!-- End Save Button-->
-<div class="div1">
-<hr class="incline-line"></hr>
-<hr class="incline-line2"></hr>
-</div>
-</form>
-<!-- volunteers-->
-		<div class="container">
-			<h2 class="text-center pt-5 pb-3" style="color:#1e4072;">: المتطوعين المتميزين</h2>
-			<div class="row justify-content-center text-center">
-				<div class="col-10 col-md-3">
-					<div class="feature">
-					<img src="img/profile2.png" class="img-circle myimg" alt="circle"/>
-						<h3 class="name">سمية ناصر</h3>
-					</div>
-				</div>
-				<div class="col-10 col-md-3">
-					<div class="feature">
-					<img src="img/profile.png" class="img-circle myimg" alt="circle"/>
-						<h3 class="name">خالد عبدالعزيز</h3>
-					</div>
-				</div>
-				<div class="col-10 col-md-3">
-					<div class="feature">
-					<img src="img/profile3.png" class="img-circle myimg" alt="circle"/>
-						<h3 class="name">سعود ناصر</h3>
-					</div>
-				</div>
-				<div class="col-10 col-md-3">
-					<div class="feature">
-					<img src="img/profile2.png" class="img-circle myimg" alt="circle"/>
-						<h3 class="name">خلود سعد</h3>
-					</div>
-				</div>
-			</div><!--- End Row -->
-		</div><!--- End Container -->
 
-<!-- End volunteers-->
+</form>
 
 <!--- Start Footer -->
 <?php include 'includes/footer.php';?>

@@ -24,13 +24,8 @@ body {
   color: white;
 }
 
-.feature img {
-  padding: 1.5rem;
- 
-}
-
 footer {
-  background-color: #40474e;
+  background-color: #40474e;;
   background-size: cover;
   color: white;
   
@@ -38,11 +33,6 @@ footer {
 footer .row {
   line-height: 2rem;
   margin: 0.0rem 0.0rem 0.0rem 1.5rem;
-}
-footer img {
-  margin: 0px 115px;
-  display: flex;
-  
 }
 footer h3 {
   margin: 1.5rem 0;
@@ -273,6 +263,44 @@ background-color: #fff;
 }
 .datepicker{
   color: #1e4072;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 25px;
+  
+}
+th{
+	background-color: rgba(176, 221, 232, 1);
+	color:#1e4072;
+}
+th, td {
+  text-align: center;
+  padding: 8px;
+  
+}
+
+td{
+	color: #505962;
+	
+}
+/* style='background-color:#9c2025; border-color:#9c2025' */
+tr:nth-child(even) {background-color: rgba(176, 221, 232, 1);}
+     
+button {
+font-family: "Montserrat", sans-serif;
+padding: 5px 10px;
+border-radius: 0.5em;
+background: #57ccc3;
+border: none;
+font-weight: bold;
+font-size :12px;
+
+}
+
+button:hover {
+background: #ccc;
+cursor: pointer;
 }
 
 

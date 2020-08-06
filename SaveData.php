@@ -2,6 +2,7 @@
 <?php
     // Connect With Database 
     require_once('config.php');
+    require_once "functions.php";
 
     session_start();
     if($_SERVER['REQUEST_METHOD']=='POST'){
@@ -45,14 +46,7 @@
 
                     header("location: DataEntry.php?Save=Fail");
                 }
-            }
-   
-                    
-                    
-            else {
-                        
-                   echo "can't use this page";
-
-    
-                    }
+            } else {
+                redirectToIndexPage();
+                 }
 ?>

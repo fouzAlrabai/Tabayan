@@ -24,7 +24,8 @@
 	        $mail->addAddress($email);
 	        $mail->setFrom("tabayanteam@gmail.com","Tabayan");
 	        $mail->Subject = "Reset Password";
-	        $mail->isHTML(true);
+            $mail->isHTML(true);
+            $mail->AddEmbeddedImage('img/logoInEmail.png', 'logoimg', 'img/logoInEmail.png'); // attach file img/Picture 2.png', and later link to it using identfier logoimg
             $mail->Body ="<html lang='HE'>
             <head>
             <title>
@@ -34,45 +35,35 @@
             <body style='text-align:right; direction:rtl;'>
                 <table>
                     <tr>
-                        <td><h4>مرحبا،</h4></td>
+                        <td><h4>مرحباً،</h4></td>
                     </tr>
 
                     <tr>
-                    <td>لإعادة تعيين كلمة المرور لمنصة تبين، انقر على الرابط التالي: <br>
-                    </td>
+                        <td>لإعادة تعيين كلمة المرور لمنصة تبين، انقر على الرابط التالي: <br></td>
                     </tr>
     
                     <tr>
-                    <td>
-                    <a href='
-                    http://192.168.64.2/Tabayan/resetPassword.php?email=$email&token=$token
-                    '>http://192.168.64.2/Tabayan/resetPassword.php?email=$email&token=$token</a></td>
-                    </tr>
-                    <br>
-                  
-                    <tr>
-                    <td>اذا كنت لا تريد يمكنك تجاهل هذا البريد.</td>
+                        <td>
+                            <a href='
+                            http://192.168.64.2/Tabayan/resetPassword.php?email=$email&token=$token
+                            '>http://192.168.64.2/Tabayan/resetPassword.php?email=$email&token=$token</a>
+                        </td>
                     </tr>
 
-                    <br>
-                    <br>
                     <tr>
-                        <td><h4>فريق تبيّن</h4></td> 
-    
+                        <td><br><br>اذا كنت لا تريد يمكنك تجاهل هذا البريد.</td>
                     </tr>
-    
                     <tr>
-                    <img src=\"cid:logoimg\" style='direction:rtl;'>
-                </tr>
+                        <td><h4><br><br>فريق تبيّن</h4><br>
+                        <img src=\"cid:logoimg\" style='direction:rtl;'>
+                        </td> 
+                    </tr>
+
                 </table>
             </body>
-        </html>";
-            
-
-
-
+        </html>";          
 	        if ($mail->send())
-    	        exit(json_encode(array("status" => 1, "msg" => '<p style="color:#616161; font-size:20px">راجع بريدك الإلكتروني </p> <p style="color:#616161;">لقد ارسلنا إليك بريد إلكتروني للتحقق. افتحه وانقر على الرابط لمتابعة تغيير كلمة المرور </p>')));
+    	        exit(json_encode(array("status" => 1, "msg" => '<p style="color:#616161; font-size:20px">راجع بريدك الإلكتروني </p> <p style="color:#616161;">لقد ارسلنا إليك بريد إلكتروني للتحقق، افتحه وانقر على الرابط لمتابعة تغيير كلمة المرور </p>')));
     	    else
     	        exit(json_encode(array("status" => 0, "msg" => 'حدث خطأ اثناء تغيير كلمة المرور، حاول مرة اخرى.')));
 

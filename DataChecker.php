@@ -105,9 +105,9 @@
 	<?php }else{ ?>
 		<div class="container ">
 			<div class="row justify-content-center text-center  py-5">
-				<div class="col-lg-5 col-md-5 col-sm-4 col-xs-4 first py-5 ">
+				<div class="col-lg-5 col-md-5 col-sm-4 col-xs-4 first py-3 ">
 					<h3	 class="text-center py-3" style="font-weight: bold">: تحقق من البيانات المدخلة</h3>	
-					<div class="style py-2">
+					<div class="style py-3 text-right" style="padding: 15px">
 			
 						<?php
 							while($row=mysqli_fetch_array($result)){	

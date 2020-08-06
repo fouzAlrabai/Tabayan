@@ -18,55 +18,14 @@
     <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
 	<link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 	
-	<style>
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 25px;
-  
-}
-th{
-	background-color: rgba(176, 221, 232, 1);
-	color:#1e4072;
-}
-th, td {
-  text-align: center;
-  padding: 8px;
-  
-}
+<style>  
 
-td{
-	color: #505962;
-	
-}
-/* style='background-color:#9c2025; border-color:#9c2025' */
-tr:nth-child(even) {background-color: rgba(176, 221, 232, 1);}
-     
-button {
-font-family: "Montserrat", sans-serif;
-padding: 5px 10px;
-border-radius: 0.5em;
-background: #57ccc3;
-border: none;
-font-weight: bold;
-font-size :12px;
-
-}
-
-button:hover {
-background: #ccc;
-cursor: pointer;
-} 
-  
-
-#bgimage{
-background-image: url('img/data-image3.png');
-background-position: center center;
-background-size: cover;
-height: 220px;
-}
-      
-    
+	#bgimage{
+	background-image: url('img/data-image3.png');
+	background-position: center center;
+	background-size: cover;
+	height: 220px;
+	}   
 </style>
 	
 </head>
@@ -104,20 +63,24 @@ height: 220px;
 						if(@$_GET['Done']==true){
 							if(@$_GET['Done']=='delete'){
 								echo '<script type="text/javascript">';
-								echo 'setTimeout(function () {swal( " تم حذف طلب المشترك ", " " ,"success", { buttons: { catch: { text: "تم",value: "catch",},},timer: 3000}).then((value) => { window.location.href="Admin.php"; });';
+								echo 'setTimeout(function () {swal( " ", " تم حذف طلب المشارك" ,"success", { buttons: { catch: { text: "تم",value: "catch",},},timer: 2000}).then((value) => { window.location.href="Admin.php"; });';
 								echo '}, 500);</script>';
 
 							//Fail to Send Request
 							}elseif (@$_GET['Done']=='update') {
 								echo '<script type="text/javascript">';
-								echo 'setTimeout(function () {swal( " تم تفعيل حساب المشارك", " " ,"success", { buttons: { catch: { text: "تم",value: "catch",},},timer: 3000}).then((value) => { window.location.href="Admin.php"; });';
+								echo 'setTimeout(function () {swal( " ", " تم تفعيل حساب المشارك" ,"success", { buttons: { catch: { text: "تم",value: "catch",},},timer: 2000}).then((value) => { window.location.href="Admin.php"; });';
+								echo '}, 500);</script>';
+							}elseif (@$_GET['Done']=='error') {
+								echo '<script type="text/javascript">';
+								echo 'setTimeout(function () {swal( " حدث خطأ ما", " حاول المحاولة مرة أٌخرى " ,"error", { buttons: { catch: { text: "تم",value: "catch",},},timer: 2000}).then((value) => { window.location.href="Admin.php"; });';
 								echo '}, 500);</script>';
 							}
 
 						} 
 						if(@$_GET['email']==true){
 							echo '<script type="text/javascript">';
-							echo 'setTimeout(function () {swal( " خطا في ارسال الايميل", " " ,"success", { buttons: { catch: { text: "تم",value: "catch",},},timer: 3000}).then((value) => { window.location.href="Admin.php"; });';
+							echo 'setTimeout(function () {swal( "  خطا في ارسال الايميل ", " حاول المحاولة مرة أٌخرى" ,"error", { buttons: { catch: { text: "تم",value: "catch",},},timer: 2000}).then((value) => { window.location.href="Admin.php"; });';
 							echo '}, 500);</script>';
 						}?>	
 			<thead>
@@ -138,9 +101,9 @@ height: 220px;
 					<form action="AcceptOrRejectUser.php" method="post" role="form">
 						<td><?php echo $row["user_name"];?> </td>
 						<td> <?php echo $row["user_email"];?> </td>			
-						<td><?php echo $row["user_type"];?> </td>			
-						<td><button type="submit" class="btn btn-success btn-block"  name="Accept" value=<?php echo $row["user_email"];?> >قبول </button></td>
-						<td><button type="submit" class="btn btn-danger btn-block"  name="Delete"  value=<?php echo $row["user_email"];?> >رفض</button></td>
+						<td><?php $type= $row["user_type"]; ?> </td>			
+						<td><button type="submit" class="btn btn-success btn-block"  name="Accept" value=<?php echo $row["user_email"].",".$row["user_type"];?> >قبول </button></td>
+						<td><button type="submit" class="btn btn-danger btn-block"  name="Delete"  value=<?php echo $row["user_email"].",".$row["user_type"];?> >رفض</button></td>
 					</form>  
 				</tr> <?php $sr++;  }?>
 			</tbody>

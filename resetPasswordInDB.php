@@ -18,13 +18,13 @@
 			$con->query("UPDATE user SET token='', user_password = '$newPassword'
 				WHERE user_email='$email'
 			");
-			header("location: index.php?ResetPass=Yes");
+			header("location: login.php?ResetPass=Yes");
  			}else{
 				header("location: resetPassword.php?passwordsNotMatch=كلمتا المرور غير متطابقتين"); 
 			 }
 				
 		} else
-		header("location: index.php?ResetPass=No");
+		header("location: login.php?ResetPass=No");
 	} else {
 		redirectToLoginPage();
 	}
